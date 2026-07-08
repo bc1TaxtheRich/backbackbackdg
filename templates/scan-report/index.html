@@ -186,7 +186,7 @@ h2.display{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw
   border-bottom-width:2px;border-radius:4px;padding:1px 7px;color:var(--text);
 }
 
-/* Windows "Run" dialog mockup — Win+R, not a terminal window */
+/* Windows setup-wizard style mockup */
 .rundialog{
   max-width:540px;margin:0 auto;background:#F0F1F3;border-radius:7px;overflow:hidden;
   box-shadow:0 24px 60px -20px rgba(0,0,0,.55),0 0 0 1px rgba(0,0,0,.25);
@@ -285,7 +285,7 @@ footer{border-top:1px solid var(--line);padding:40px 0}
         <a href="#install" class="btn btn-primary">Download free — 7 days full access</a>
         <a href="#pricing" class="btn btn-secondary">See pricing</a>
       </div>
-      <div class="trust">Windows · One command via Win+R · <b>No credit card required</b></div>
+      <div class="trust">Windows · Signed installer · <b>No credit card required</b></div>
     </div>
 
     <div class="graph-card" role="img" aria-label="Diagram of SeoBooster scanning a site's link structure and flagging one broken link">
@@ -392,29 +392,29 @@ footer{border-top:1px solid var(--line);padding:40px 0}
       <span class="section-eyebrow">// getting started</span>
       <h2 class="display">Download, run, connect.</h2>
       <ul class="steps">
-        <li><div class="step-num">01</div><div class="step-body"><h4>Press <kbd>Win</kbd> + <kbd>R</kbd></h4><p>Opens the Windows Run box — no other software required.</p></div></li>
-        <li><div class="step-num">02</div><div class="step-body"><h4>Paste the command and hit Enter</h4><p>Copies SeoBooster to your machine and launches it.</p></div></li>
+        <li><div class="step-num">01</div><div class="step-body"><h4>Download the installer</h4><p>SeoBooster-Setup.exe, digitally signed — any Windows machine.</p></div></li>
+        <li><div class="step-num">02</div><div class="step-body"><h4>Run SeoBooster-Setup.exe</h4><p>Double-click it and follow the setup wizard.</p></div></li>
         <li><div class="step-num">03</div><div class="step-body"><h4>Connect your site</h4><p>Paste your site's URL when the app opens.</p></div></li>
         <li><div class="step-num">04</div><div class="step-body"><h4>Get your first scan</h4><p>Full trial starts automatically — no card required.</p></div></li>
       </ul>
     </div>
     <div class="rundialog">
       <div class="rd-titlebar">
-        <span class="rd-icon" aria-hidden="true"></span><span class="rd-name">Run</span>
+        <span class="rd-icon" aria-hidden="true"></span><span class="rd-name">SeoBooster Setup</span>
         <span class="rd-close">✕</span>
       </div>
       <div class="rd-body">
-        <p>Type the name of a program, folder, document, or internet resource, and Windows will open it for you.</p>
+        <p>Installing SeoBooster. This will only take a moment.</p>
         <div class="rd-field-row">
-          <span class="rd-field-label">Open:</span>
-          <div class="rd-input" id="install-cmd">powershell -Command "irm https://get.seobooster.dev/install.ps1 | iex"</div>
+          <span class="rd-field-label">Install to:</span>
+          <div class="rd-input">C:\Program Files\SeoBooster\</div>
         </div>
         <div class="rd-actions">
-          <button class="copy-btn" id="copy-btn">Copy command</button>
-          <button class="rd-btn primary">OK</button>
+          <a href="#" class="copy-btn" style="text-decoration:none;display:inline-block">Download installer</a>
+          <button class="rd-btn primary">Install</button>
           <button class="rd-btn">Cancel</button>
         </div>
-        <p class="rd-note">Downloading SeoBooster... <span class="ok">done</span><br>Launching application...</p>
+        <p class="rd-note">Verifying publisher signature... <span class="ok">ok</span><br>Ready to launch after install.</p>
       </div>
     </div>
   </div>
@@ -456,16 +456,6 @@ footer{border-top:1px solid var(--line);padding:40px 0}
 </footer>
 
 <script>
-document.getElementById('copy-btn').addEventListener('click', function(){
-  var text = document.getElementById('install-cmd').textContent;
-  navigator.clipboard.writeText(text).then(function(){
-    var btn = document.getElementById('copy-btn');
-    var original = btn.textContent;
-    btn.textContent = 'Copied';
-    setTimeout(function(){ btn.textContent = original; }, 1500);
-  });
-});
-
 /* ---- demo site rotation: swaps the domain + broken link shown in the hero graph ---- */
 (function(){
   var sites = [

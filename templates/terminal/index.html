@@ -200,7 +200,7 @@ footer{border-top:1px solid var(--line);padding:32px 0}
         </div>
       </div>
     </div>
-    <p class="trust">Windows · installs via PowerShell · <b>no credit card required</b></p>
+    <p class="trust">Windows · signed installer · <b>no credit card required</b></p>
   </div>
 </header>
 
@@ -256,21 +256,22 @@ footer{border-top:1px solid var(--line);padding:32px 0}
       <span class="section-eyebrow">&gt; ./install</span>
       <h2 class="disp">Download, run, connect.</h2>
       <ul class="steps">
-        <li><div class="step-num">01</div><div class="step-body"><h4>Open PowerShell</h4><p>Any Windows machine — no other software required.</p></div></li>
-        <li><div class="step-num">02</div><div class="step-body"><h4>Run the install command</h4><p>Copies SEOBooster to your machine and launches it.</p></div></li>
+        <li><div class="step-num">01</div><div class="step-body"><h4>Download the installer</h4><p>SEOBooster-Setup.exe, digitally signed — any Windows machine.</p></div></li>
+        <li><div class="step-num">02</div><div class="step-body"><h4>Run SEOBooster-Setup.exe</h4><p>Double-click it and follow the setup wizard.</p></div></li>
         <li><div class="step-num">03</div><div class="step-body"><h4>Connect your site</h4><p>Paste your site's URL when the app opens.</p></div></li>
         <li><div class="step-num">04</div><div class="step-body"><h4>Get your first scan</h4><p>Full trial starts automatically — no card required.</p></div></li>
       </ul>
     </div>
     <div class="terminal">
-      <div class="term-bar">Windows PowerShell</div>
+      <div class="term-bar">SEOBooster-Setup.exe</div>
       <div class="term-body">
-        <div class="term-line">PS C:\Users\you&gt; # install SEOBooster</div>
+        <div class="term-line">&gt; verifying publisher signature... <span class="ok">ok</span></div>
+        <div class="term-line">&gt; extracting files...</div>
         <div class="term-cmd">
-          <code id="install-cmd">irm https://get.seobooster.dev/install.ps1 | iex</code>
-          <button class="copy-btn" id="copy-btn">copy</button>
+          <code>installing to C:\Program Files\SEOBooster\</code>
+          <a href="#" class="copy-btn" style="text-decoration:none;display:inline-block">download</a>
         </div>
-        <div class="term-out">Downloading SEOBooster... <span class="ok">done</span><br>Launching application...</div>
+        <div class="term-out">Setup complete. <span class="ok">done</span><br>Launching application...</div>
       </div>
     </div>
   </div>
@@ -310,18 +311,6 @@ footer{border-top:1px solid var(--line);padding:32px 0}
     <div class="status-line"><span class="status-dot"></span> all systems operational</div>
   </div>
 </footer>
-
-<script>
-document.getElementById('copy-btn').addEventListener('click', function(){
-  var text = document.getElementById('install-cmd').textContent;
-  navigator.clipboard.writeText(text).then(function(){
-    var btn = document.getElementById('copy-btn');
-    var original = btn.textContent;
-    btn.textContent = 'copied';
-    setTimeout(function(){ btn.textContent = original; }, 1500);
-  });
-});
-</script>
 
 </body>
 </html>

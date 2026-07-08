@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — SeoBooster</title>
+<meta name="description" content="Questions about a scan, a license, or your SeoBooster report? Get in touch with the SeoBooster team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F4EE;
+  --surface:#FFFFFF;
+  --ink:#15151A;
+  --muted:#68666F;
+  --line:#E7E3D8;
+  --accent:#5546E8;
+  --accent-ink:#FFFFFF;
+  --flag:#D8432F;
+  --good:#1F8A5F;
+  --display:'Instrument Sans',sans-serif;
+  --body:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--body);line-height:1.6;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+section{padding:100px 0}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(246,244,238,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:26px;height:26px;border-radius:7px;background:var(--ink);position:relative;flex:none}
+.logo-mark::before{content:"";position:absolute;inset:7px;border:2px solid var(--bg);border-right-color:transparent;border-bottom-color:transparent;transform:rotate(45deg)}
+.logo-word{font-family:var(--display);font-weight:700;font-size:17.5px;letter-spacing:-.01em}
+.nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--muted);font-weight:500}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.current{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-signin{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-signin:hover{color:var(--accent)}
+.nav-cta{font-size:14px;font-weight:600;background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:8px;text-decoration:none;transition:transform .12s,box-shadow .12s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 16px -6px rgba(85,70,232,.5)}
+
+.page-hero{padding:64px 0 8px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--accent);background:rgba(85,70,232,.08);border-radius:20px;padding:6px 14px;margin-bottom:22px}
+h1.display{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.2vw,48px);line-height:1.06;letter-spacing:-.02em;margin:0 0 16px}
+.sub{font-size:17px;color:var(--muted);max-width:52ch;margin:0 auto}
+
+.btn{font-family:var(--body);font-size:15px;font-weight:600;padding:14px 24px;border-radius:9px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid transparent;transition:transform .12s,box-shadow .12s;cursor:pointer}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:#fff;width:100%}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(85,70,232,.5)}
+
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start;max-width:960px;margin:0 auto}
+.form-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{margin-bottom:18px}
+.form-field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:7px}
+.form-input,.form-textarea,.form-select{
+  width:100%;border:1px solid var(--line);border-radius:9px;padding:12px 14px;
+  font-family:var(--body);font-size:14.5px;color:var(--ink);background:var(--bg);
+}
+.form-textarea{resize:vertical;min-height:130px}
+.form-input:focus,.form-textarea:focus,.form-select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.form-success{display:none;background:rgba(31,138,95,.08);border:1px solid rgba(31,138,95,.25);color:var(--good);border-radius:10px;padding:14px 16px;font-size:14px;margin-bottom:18px}
+.form-success.show{display:block}
+
+.contact-info-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
+.contact-info-row{padding:16px 0;border-top:1px solid var(--line)}
+.contact-info-row:first-child{border-top:none;padding-top:0}
+.contact-info-row h4{margin:0 0 4px;font-size:14.5px;font-weight:600}
+.contact-info-row p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6}
+.contact-info-row a{color:var(--accent);text-decoration:none;font-weight:600}
+.contact-info-row a:hover{text-decoration:underline}
+
+footer{border-top:1px solid var(--line);padding:56px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:44px}
+.foot-brand .logo{margin-bottom:14px}
+.foot-brand p{color:var(--muted);font-size:14px;line-height:1.6;max-width:32ch;margin:0}
+.foot-col h5{font-family:var(--display);font-size:13px;font-weight:700;margin:0 0 16px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.foot-col ul{list-style:none;margin:0;padding:0}
+.foot-col li{margin-bottom:11px}
+.foot-col a{text-decoration:none;color:var(--ink);font-size:14.5px}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid var(--line);padding-top:22px}
+.foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13.5px;color:var(--muted)}
+.status-line{display:flex;align-items:center;gap:8px}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--good)}
+
+@media (max-width:960px){
+  .nav-links{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .contact-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-row">
+    <ul class="nav-links">
+      <li><a href="index.html#modules">Features</a></li>
+      <li><a href="index.html#demo">Demo</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="contact.html" class="current">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="login.html" class="nav-signin">Sign in</a>
+      <a href="index.html#pricing" class="nav-cta">Pricing</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h1 class="display">Let's talk about your site.</h1>
+    <p class="sub">Questions about a scan, a license, or something that looks broken in your report — we read every message.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="form-card">
+        <div class="form-success" id="form-success">Message sent — we'll get back to you within 1 business day.</div>
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-name">Name</label>
+              <input class="form-input" id="cf-name" type="text" placeholder="Jordan Marsh" required>
+            </div>
+            <div class="form-field">
+              <label for="cf-email">Email</label>
+              <input class="form-input" id="cf-email" type="email" placeholder="you@yoursite.com" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="cf-topic">Topic</label>
+            <select class="form-select" id="cf-topic">
+              <option>General question</option>
+              <option>Billing &amp; license</option>
+              <option>Bug report</option>
+              <option>Press &amp; partnerships</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf-message">Message</label>
+            <textarea class="form-textarea" id="cf-message" placeholder="What's going on with your scan or license?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="contact-info-row">
+          <h4>Support</h4>
+          <p><a href="mailto:support@seobooster.dev">support@seobooster.dev</a></p>
+          <p>Typical response time: within 1 business day.</p>
+        </div>
+        <div class="contact-info-row">
+          <h4>Before you write in</h4>
+          <p>Most install and license questions are answered in the <a href="index.html#faq">FAQ</a>.</p>
+        </div>
+        <div class="contact-info-row">
+          <h4>Company</h4>
+          <p>SeoBooster Software Ltd.<br>Registered in the United Kingdom.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><span class="logo-mark"></span><span class="logo-word">SeoBooster</span></a>
+        <p>A desktop tool that connects straight to your site — crawls every link, tracks every backlink, and audits your structure in plain English.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html#modules">Broken Link Sweep</a></li>
+          <li><a href="index.html#modules">Backlink Intelligence</a></li>
+          <li><a href="index.html#modules">Deep AI Audit</a></li>
+          <li><a href="index.html#modules">Redirect &amp; Crawl Map</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="index.html#demo">Demo</a></li>
+          <li><a href="index.html#install">How it works</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom foot-row">
+      <div>© 2026 SeoBooster Software Ltd. · Not affiliated with any search engine</div>
+      <div class="status-line"><span class="status-dot"></span> All modules operational</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('form-success').classList.add('show');
+  this.reset();
+});
+</script>
+
+</body>
+</html>

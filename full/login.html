@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in — SeoBooster</title>
+<meta name="description" content="Sign in or create a SeoBooster account. Scanning itself happens in the desktop app — this just manages your license.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F4EE;
+  --surface:#FFFFFF;
+  --ink:#15151A;
+  --muted:#68666F;
+  --line:#E7E3D8;
+  --accent:#5546E8;
+  --accent-ink:#FFFFFF;
+  --flag:#D8432F;
+  --good:#1F8A5F;
+  --display:'Instrument Sans',sans-serif;
+  --body:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--body);line-height:1.6;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(246,244,238,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:26px;height:26px;border-radius:7px;background:var(--ink);position:relative;flex:none}
+.logo-mark::before{content:"";position:absolute;inset:7px;border:2px solid var(--bg);border-right-color:transparent;border-bottom-color:transparent;transform:rotate(45deg)}
+.logo-word{font-family:var(--display);font-weight:700;font-size:17.5px;letter-spacing:-.01em}
+.nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--muted);font-weight:500}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:14px;font-weight:600;background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:8px;text-decoration:none}
+
+.btn{font-family:var(--body);font-size:15px;font-weight:600;padding:13px 22px;border-radius:9px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent;cursor:pointer;transition:transform .12s,box-shadow .12s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(85,70,232,.5)}
+.btn-secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-secondary:hover{border-color:var(--ink)}
+
+.auth-wrap{padding:72px 24px 120px;display:flex;justify-content:center}
+.auth-card{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 30px 60px -40px rgba(21,21,26,.3)}
+
+.auth-tabs{display:flex;gap:4px;padding:6px;background:var(--bg);border-radius:12px;margin:8px}
+.auth-tab{flex:1;text-align:center;font-family:var(--body);font-size:13.5px;font-weight:600;color:var(--muted);background:none;border:none;border-radius:8px;padding:10px;cursor:pointer;transition:background .15s,color .15s}
+.auth-tab.active{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(21,21,26,.1)}
+
+.auth-body{padding:22px 26px 28px}
+.auth-panel{display:none}
+.auth-panel.active{display:block}
+.auth-field{margin-bottom:16px}
+.auth-field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:7px}
+.auth-input{width:100%;border:1px solid var(--line);border-radius:9px;padding:12px 14px;font-family:var(--body);font-size:14.5px;color:var(--ink);background:var(--bg)}
+.auth-input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.auth-fine{font-size:12.5px;color:var(--muted);text-align:center;margin:16px 0 0}
+
+.auth-input.invalid{border-color:var(--flag)}
+.auth-error{display:none;font-size:12px;color:var(--flag);margin-top:6px}
+.auth-error.show{display:block}
+
+.pw-strength{display:none;margin-top:8px}
+.pw-strength.show{display:block}
+.pw-bars{display:flex;gap:4px;margin-bottom:6px}
+.pw-bar{height:4px;flex:1;background:var(--line);border-radius:2px}
+.pw-bar.weak{background:var(--flag)}
+.pw-bar.medium{background:#E3A008}
+.pw-bar.strong{background:var(--good)}
+.pw-label{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.pw-label.weak{color:var(--flag)}
+.pw-label.medium{color:#E3A008}
+.pw-label.strong{color:var(--good)}
+.auth-fine a{color:var(--accent);font-weight:600;text-decoration:none}
+.auth-fine a:hover{text-decoration:underline}
+
+.auth-step-forms{display:none}
+.auth-step-forms.active{display:block}
+.auth-step{display:none}
+.auth-step.active{display:block}
+.auth-step .auth-body{text-align:center}
+.auth-step-icon{width:56px;height:56px;border-radius:14px;background:var(--ink);margin:8px auto 20px;display:flex;align-items:center;justify-content:center}
+.auth-success-icon{width:56px;height:56px;border-radius:50%;background:rgba(31,138,95,.1);display:flex;align-items:center;justify-content:center;margin:8px auto 20px}
+.auth-step h3{font-family:var(--display);font-weight:700;font-size:19px;margin:0 0 10px}
+.auth-step p{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 22px;max-width:32ch;margin-left:auto;margin-right:auto}
+.auth-step .btn{width:100%;justify-content:center;margin-top:10px}
+.auth-step .btn:first-of-type{margin-top:0}
+.auth-waitrow{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:16px}
+.auth-waitdot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:waitpulse 1.4s infinite}
+@keyframes waitpulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+footer{border-top:1px solid var(--line);padding:32px 0}
+.foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13.5px;color:var(--muted)}
+
+@media (max-width:860px){.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-row">
+    <ul class="nav-links">
+      <li><a href="index.html#modules">Features</a></li>
+      <li><a href="index.html#demo">Demo</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="index.html#pricing" class="nav-cta">Pricing</a>
+  </div>
+</nav>
+
+<div class="auth-wrap">
+  <div class="auth-card" id="auth-card">
+
+    <div class="auth-step-forms active" id="step-forms">
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="signin">Sign in</button>
+        <button class="auth-tab" data-tab="signup">Create account</button>
+      </div>
+      <div class="auth-body">
+        <form class="auth-panel active" data-panel="signin" id="form-signin" novalidate>
+          <div class="auth-field">
+            <label for="si-email">Email</label>
+            <input class="auth-input" id="si-email" type="email" placeholder="you@yoursite.com" required>
+            <div class="auth-error" id="si-email-error">Enter a valid email address.</div>
+          </div>
+          <div class="auth-field">
+            <label for="si-pass">Password</label>
+            <input class="auth-input" id="si-pass" type="password" placeholder="••••••••" required>
+            <div class="auth-error" id="si-pass-error">Enter your password.</div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Sign in</button>
+          <p class="auth-fine">New to SeoBooster? <a href="#" data-switch="signup">Create an account</a></p>
+        </form>
+        <form class="auth-panel" data-panel="signup" id="form-signup" novalidate>
+          <div class="auth-field">
+            <label for="su-name">Name</label>
+            <input class="auth-input" id="su-name" type="text" placeholder="Jordan Marsh" required>
+            <div class="auth-error" id="su-name-error">Enter your name.</div>
+          </div>
+          <div class="auth-field">
+            <label for="su-email">Email</label>
+            <input class="auth-input" id="su-email" type="email" placeholder="you@yoursite.com" required>
+            <div class="auth-error" id="su-email-error">Enter a valid email address.</div>
+          </div>
+          <div class="auth-field">
+            <label for="su-pass">Password</label>
+            <input class="auth-input" id="su-pass" type="password" placeholder="••••••••" required minlength="8">
+            <div class="pw-strength" id="pw-strength">
+              <div class="pw-bars"><div class="pw-bar" id="pw-bar-1"></div><div class="pw-bar" id="pw-bar-2"></div><div class="pw-bar" id="pw-bar-3"></div></div>
+              <span class="pw-label" id="pw-label">Use at least 8 characters</span>
+            </div>
+            <div class="auth-error" id="su-pass-error">Password must be at least 8 characters.</div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Create account</button>
+          <p class="auth-fine">Already have an account? <a href="#" data-switch="signin">Sign in</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="auth-step" id="step-continue">
+      <div class="auth-body">
+        <div class="auth-step-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 18h14" stroke="#F6F4EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Continue in the app</h3>
+        <p>Your account is ready. Open SeoBooster on your Windows PC — you'll be signed in there automatically.</p>
+        <a href="index.html#install" class="btn btn-primary">Download SeoBooster</a>
+        <p class="auth-fine">Already have it installed? Just open the app — you'll be signed in there.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>© 2026 SeoBooster Software Ltd.</div>
+    <div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.auth-tab');
+  var panels = document.querySelectorAll('.auth-panel');
+
+  function activateTab(name){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab === name); });
+    panels.forEach(function(p){ p.classList.toggle('active', p.dataset.panel === name); });
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){ activateTab(tab.dataset.tab); });
+  });
+  document.querySelectorAll('[data-switch]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      activateTab(link.dataset.switch);
+    });
+  });
+
+  var stepForms = document.getElementById('step-forms');
+  var stepContinue = document.getElementById('step-continue');
+
+  function showContinueStep(){
+    stepForms.classList.remove('active');
+    stepContinue.classList.add('active');
+  }
+
+  function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+
+  function setError(input, errorEl, show){
+    input.classList.toggle('invalid', show);
+    errorEl.classList.toggle('show', show);
+  }
+
+  function validateEmail(input, errorEl){
+    var ok = isValidEmail(input.value);
+    setError(input, errorEl, !ok);
+    return ok;
+  }
+  function validateRequired(input, errorEl, minLen){
+    var ok = input.value.trim().length >= (minLen || 1);
+    setError(input, errorEl, !ok);
+    return ok;
+  }
+
+  var siEmail = document.getElementById('si-email'), siEmailErr = document.getElementById('si-email-error');
+  var siPass = document.getElementById('si-pass'), siPassErr = document.getElementById('si-pass-error');
+  siEmail.addEventListener('blur', function(){ validateEmail(siEmail, siEmailErr); });
+  siPass.addEventListener('blur', function(){ validateRequired(siPass, siPassErr, 1); });
+
+  var suName = document.getElementById('su-name'), suNameErr = document.getElementById('su-name-error');
+  var suEmail = document.getElementById('su-email'), suEmailErr = document.getElementById('su-email-error');
+  var suPass = document.getElementById('su-pass'), suPassErr = document.getElementById('su-pass-error');
+  suName.addEventListener('blur', function(){ validateRequired(suName, suNameErr, 2); });
+  suEmail.addEventListener('blur', function(){ validateEmail(suEmail, suEmailErr); });
+  suPass.addEventListener('blur', function(){ validateRequired(suPass, suPassErr, 8); });
+
+  /* password strength meter */
+  var pwBars = [document.getElementById('pw-bar-1'), document.getElementById('pw-bar-2'), document.getElementById('pw-bar-3')];
+  var pwLabel = document.getElementById('pw-label');
+  var pwStrength = document.getElementById('pw-strength');
+
+  function scorePassword(v){
+    var score = 0;
+    if(v.length >= 8) score++;
+    if(/[a-z]/.test(v) && /[A-Z]/.test(v)) score++;
+    if(/\d/.test(v)) score++;
+    if(/[^A-Za-z0-9]/.test(v)) score++;
+    return score;
+  }
+
+  suPass.addEventListener('input', function(){
+    var v = suPass.value;
+    if(!v){ pwStrength.classList.remove('show'); return; }
+    pwStrength.classList.add('show');
+    var score = scorePassword(v);
+    var level = score <= 1 ? 'weak' : (score <= 3 ? 'medium' : 'strong');
+    var filled = level === 'weak' ? 1 : (level === 'medium' ? 2 : 3);
+    pwBars.forEach(function(bar, i){ bar.className = 'pw-bar' + (i < filled ? ' ' + level : ''); });
+    pwLabel.textContent = level.charAt(0).toUpperCase() + level.slice(1) + ' password';
+    pwLabel.className = 'pw-label ' + level;
+  });
+
+  document.getElementById('form-signin').addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok1 = validateEmail(siEmail, siEmailErr);
+    var ok2 = validateRequired(siPass, siPassErr, 1);
+    if(ok1 && ok2) showContinueStep();
+  });
+
+  document.getElementById('form-signup').addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok1 = validateRequired(suName, suNameErr, 2);
+    var ok2 = validateEmail(suEmail, suEmailErr);
+    var ok3 = validateRequired(suPass, suPassErr, 8);
+    if(ok1 && ok2 && ok3) showContinueStep();
+  });
+})();
+</script>
+
+</body>
+</html>

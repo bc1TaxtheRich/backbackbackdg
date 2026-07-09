@@ -1,332 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SeoBooster - Home</title>
-<meta name="description" content="A desktop tool that connects straight to your site. Crawls every link, tracks every backlink, builds new ones, optimizes your pages, and drafts content — signed installer, no plugin required.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#F6F4EE;
-  --surface:#FFFFFF;
-  --ink:#15151A;
-  --muted:#68666F;
-  --line:#E7E3D8;
-  --accent:#5546E8;
-  --accent-ink:#FFFFFF;
-  --flag:#D8432F;
-  --good:#1F8A5F;
-  --display:'Instrument Sans',sans-serif;
-  --body:'Inter',sans-serif;
-  --mono:'JetBrains Mono',monospace;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font-family:var(--body);line-height:1.6;font-size:16px;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-img,svg{display:block;max-width:100%}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-section{padding:100px 0}
-#platforms,#modules,#demo,#install,#pricing,#reviews,#faq{scroll-margin-top:88px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SeoBooster - Home</title>
+  <meta name="description" content="A desktop tool that connects straight to your site. Crawls every link, tracks every backlink, builds new ones, optimizes your pages, and drafts content — signed installer, no plugin required.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F6F4EE;
+      --surface:#FFFFFF;
+      --ink:#15151A;
+      --muted:#68666F;
+      --line:#E7E3D8;
+      --accent:#5546E8;
+      --accent-ink:#FFFFFF;
+      --flag:#D8432F;
+      --good:#1F8A5F;
+      --display:'Instrument Sans',sans-serif;
+      --body:'Inter',sans-serif;
+      --mono:'JetBrains Mono',monospace;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--bg);color:var(--ink);
+      font-family:var(--body);line-height:1.6;font-size:16px;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+    img,svg{display:block;max-width:100%}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    section{padding:100px 0}
+    #platforms,#modules,#demo,#install,#pricing,#reviews,#faq{scroll-margin-top:88px}
 
-/* ---------- NAV ---------- */
-.nav{position:sticky;top:0;z-index:50;background:rgba(246,244,238,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav-row{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
-.logo-mark{width:26px;height:26px;border-radius:7px;background:var(--ink);position:relative;flex:none}
-.logo-mark::before{content:"";position:absolute;inset:7px;border:2px solid var(--bg);border-right-color:transparent;border-bottom-color:transparent;transform:rotate(45deg)}
-.logo-word{font-family:var(--display);font-weight:700;font-size:17.5px;letter-spacing:-.01em}
-.nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--muted);font-weight:500}
-.nav-links a{text-decoration:none}
-.nav-links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:20px}
-.nav-signin{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none}
-.nav-signin:hover{color:var(--accent)}
-.nav-cta{font-size:14px;font-weight:600;background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:8px;text-decoration:none;transition:transform .12s,box-shadow .12s}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 16px -6px rgba(85,70,232,.5)}
+    /* ---------- NAV ---------- */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(246,244,238,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+    .logo-mark{width:26px;height:26px;border-radius:7px;background:var(--ink);position:relative;flex:none}
+    .logo-mark::before{content:"";position:absolute;inset:7px;border:2px solid var(--bg);border-right-color:transparent;border-bottom-color:transparent;transform:rotate(45deg)}
+    .logo-word{font-family:var(--display);font-weight:700;font-size:17.5px;letter-spacing:-.01em}
+    .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--muted);font-weight:500}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-right{display:flex;align-items:center;gap:20px}
+    .nav-signin{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none}
+    .nav-signin:hover{color:var(--accent)}
+    .nav-cta{font-size:14px;font-weight:600;background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:8px;text-decoration:none;transition:transform .12s,box-shadow .12s}
+    .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 16px -6px rgba(85,70,232,.5)}
 
-/* ---------- HERO ---------- */
-.hero{padding:76px 0 64px}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--accent);background:rgba(85,70,232,.08);border-radius:20px;padding:6px 14px;margin-bottom:22px}
-.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2.2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-h1.display{font-family:var(--display);font-weight:800;font-size:clamp(38px,4.6vw,58px);line-height:1.04;letter-spacing:-.02em;margin:0 0 22px}
-h1.display .fade{color:var(--muted);font-weight:700}
-.sub{font-size:17.5px;color:var(--muted);max-width:46ch;margin:0 0 32px}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
-.btn{font-family:var(--body);font-size:15px;font-weight:600;padding:14px 24px;border-radius:9px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent;transition:transform .12s,box-shadow .12s}
-.btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(85,70,232,.5)}
-.btn-secondary{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn-secondary:hover{border-color:var(--ink)}
-.btn-ghost{background:transparent;color:var(--ink);font-weight:600;text-decoration:none;font-size:15px;display:inline-flex;align-items:center;gap:6px}
-.btn-ghost:hover{color:var(--accent)}
-.trust{font-size:13.5px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.trust b{color:var(--ink);font-weight:600}
-.trust .sep{color:var(--line)}
+    /* ---------- HERO ---------- */
+    .hero{padding:76px 0 64px}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--accent);background:rgba(85,70,232,.08);border-radius:20px;padding:6px 14px;margin-bottom:22px}
+    .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2.2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+    h1.display{font-family:var(--display);font-weight:800;font-size:clamp(38px,4.6vw,58px);line-height:1.04;letter-spacing:-.02em;margin:0 0 22px}
+    h1.display .fade{color:var(--muted);font-weight:700}
+    .sub{font-size:17.5px;color:var(--muted);max-width:46ch;margin:0 0 32px}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+    .btn{font-family:var(--body);font-size:15px;font-weight:600;padding:14px 24px;border-radius:9px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent;transition:transform .12s,box-shadow .12s}
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(85,70,232,.5)}
+    .btn-secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+    .btn-secondary:hover{border-color:var(--ink)}
+    .btn-ghost{background:transparent;color:var(--ink);font-weight:600;text-decoration:none;font-size:15px;display:inline-flex;align-items:center;gap:6px}
+    .btn-ghost:hover{color:var(--accent)}
+    .trust{font-size:13.5px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .trust b{color:var(--ink);font-weight:600}
+    .trust .sep{color:var(--line)}
 
-/* App-window mockup (signature: coded dashboard preview) */
-.appwin{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 32px 70px -34px rgba(21,21,26,.35);overflow:hidden}
-.appwin-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
-.appwin-dot{width:9px;height:9px;border-radius:50%;background:var(--line)}
-.appwin-title{margin-left:6px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+    /* App-window mockup (signature: coded dashboard preview) */
+    .appwin{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 32px 70px -34px rgba(21,21,26,.35);overflow:hidden}
+    .appwin-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .appwin-dot{width:9px;height:9px;border-radius:50%;background:var(--line)}
+    .appwin-title{margin-left:6px;font-family:var(--mono);font-size:12px;color:var(--muted)}
 
-.dash-mock{padding:22px 24px 24px}
-.dash-mock-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.dash-mock-title{font-family:var(--display);font-weight:700;font-size:14.5px;color:var(--good);margin:0}
-.dash-range{display:flex;gap:5px}
-.dash-range button{font-family:var(--mono);font-size:10.5px;font-weight:600;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
-.dash-range button:hover{color:var(--ink);border-color:var(--muted)}
-.dash-range button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.dash-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
-.dash-stat{border:1px solid var(--line);border-radius:10px;padding:11px 13px;transition:border-color .15s}
-.dash-stat:hover{border-color:var(--muted)}
-.dash-stat-label{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
-.dash-stat-num{font-family:var(--display);font-weight:800;font-size:21px;color:var(--good);line-height:1}
-.dash-stat-delta{font-family:var(--mono);font-size:10.5px;color:var(--good);margin-top:4px}
-.dash-stat-delta.down{color:var(--flag)}
-.dash-caption{font-size:11.5px;color:var(--muted);margin:0 0 18px;line-height:1.5}
-.dash-cols{display:grid;grid-template-columns:1.05fr 1fr;gap:20px}
-.dash-col h5{font-family:var(--display);font-weight:700;font-size:12.5px;color:var(--good);margin:0 0 10px}
-.dash-table{width:100%;border-collapse:collapse;font-size:12px}
-.dash-table th{text-align:left;font-family:var(--mono);font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;padding-bottom:6px;border-bottom:1px solid var(--line);font-weight:600}
-.dash-table td{padding:7px 0;border-bottom:1px solid var(--line);color:var(--ink)}
-.dash-table tr:last-child td{border-bottom:none}
-.dash-table tbody tr:hover td{color:var(--accent)}
-.dash-issue{border-left:3px solid var(--flag);padding:2px 0 10px 11px;margin-bottom:10px;cursor:pointer}
-.dash-issue:last-child{margin-bottom:0}
-.dash-issue-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.dash-issue b{display:block;font-size:12px;font-weight:600;color:var(--ink);line-height:1.4}
-.dash-issue span{font-size:10.5px;color:var(--muted)}
-.dash-issue .chevron{font-family:var(--mono);color:var(--muted);flex:none;transition:transform .2s}
-.dash-issue.open .chevron{transform:rotate(90deg)}
-.dash-issue-detail{max-height:0;overflow:hidden;transition:max-height .25s ease}
-.dash-issue-detail p{margin:6px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
-.dash-issue.open .dash-issue-detail{max-height:60px}
-@media (prefers-reduced-motion: reduce){
-  .eyebrow .dot{animation:none}
-}
+    .dash-mock{padding:22px 24px 24px}
+    .dash-mock-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+    .dash-mock-title{font-family:var(--display);font-weight:700;font-size:14.5px;color:var(--good);margin:0}
+    .dash-range{display:flex;gap:5px}
+    .dash-range button{font-family:var(--mono);font-size:10.5px;font-weight:600;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+    .dash-range button:hover{color:var(--ink);border-color:var(--muted)}
+    .dash-range button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .dash-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+    .dash-stat{border:1px solid var(--line);border-radius:10px;padding:11px 13px;transition:border-color .15s}
+    .dash-stat:hover{border-color:var(--muted)}
+    .dash-stat-label{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
+    .dash-stat-num{font-family:var(--display);font-weight:800;font-size:21px;color:var(--good);line-height:1}
+    .dash-stat-delta{font-family:var(--mono);font-size:10.5px;color:var(--good);margin-top:4px}
+    .dash-stat-delta.down{color:var(--flag)}
+    .dash-caption{font-size:11.5px;color:var(--muted);margin:0 0 18px;line-height:1.5}
+    .dash-cols{display:grid;grid-template-columns:1.05fr 1fr;gap:20px}
+    .dash-col h5{font-family:var(--display);font-weight:700;font-size:12.5px;color:var(--good);margin:0 0 10px}
+    .dash-table{width:100%;border-collapse:collapse;font-size:12px}
+    .dash-table th{text-align:left;font-family:var(--mono);font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;padding-bottom:6px;border-bottom:1px solid var(--line);font-weight:600}
+    .dash-table td{padding:7px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+    .dash-table tr:last-child td{border-bottom:none}
+    .dash-table tbody tr:hover td{color:var(--accent)}
+    .dash-issue{border-left:3px solid var(--flag);padding:2px 0 10px 11px;margin-bottom:10px;cursor:pointer}
+    .dash-issue:last-child{margin-bottom:0}
+    .dash-issue-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+    .dash-issue b{display:block;font-size:12px;font-weight:600;color:var(--ink);line-height:1.4}
+    .dash-issue span{font-size:10.5px;color:var(--muted)}
+    .dash-issue .chevron{font-family:var(--mono);color:var(--muted);flex:none;transition:transform .2s}
+    .dash-issue.open .chevron{transform:rotate(90deg)}
+    .dash-issue-detail{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .dash-issue-detail p{margin:6px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
+    .dash-issue.open .dash-issue-detail{max-height:60px}
+    @media (prefers-reduced-motion: reduce){
+      .eyebrow .dot{animation:none}
+    }
 
-/* ---------- LIVE STAT STRIP ---------- */
-.stat-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
-.stat-row{display:flex;flex-wrap:wrap}
-.stat-item{flex:1;min-width:180px;padding:20px 28px;border-left:1px solid var(--line);text-align:center}
-.stat-item:first-child{border-left:none}
-.stat-item b{display:block;font-family:var(--display);font-weight:800;font-size:22px;font-variant-numeric:tabular-nums}
-.stat-item b.bump{animation:bump .5s ease-out}
-@keyframes bump{0%{color:var(--accent)}100%{color:var(--ink)}}
-.stat-item span{font-size:12.5px;color:var(--muted)}
+    /* ---------- LIVE STAT STRIP ---------- */
+    .stat-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+    .stat-row{display:flex;flex-wrap:wrap}
+    .stat-item{flex:1;min-width:180px;padding:20px 28px;border-left:1px solid var(--line);text-align:center}
+    .stat-item:first-child{border-left:none}
+    .stat-item b{display:block;font-family:var(--display);font-weight:800;font-size:22px;font-variant-numeric:tabular-nums}
+    .stat-item b.bump{animation:bump .5s ease-out}
+    @keyframes bump{0%{color:var(--accent)}100%{color:var(--ink)}}
+    .stat-item span{font-size:12.5px;color:var(--muted)}
 
-/* ---------- SECTION HEADS ---------- */
-.section-head{max-width:600px;margin:0 auto 52px}
-.section-head.center{text-align:center}
-.section-eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);margin-bottom:14px}
-h2.display{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.2vw,40px);letter-spacing:-.015em;margin:0 0 14px}
-.section-head p{color:var(--muted);font-size:16.5px;margin:0}
+    /* ---------- SECTION HEADS ---------- */
+    .section-head{max-width:600px;margin:0 auto 52px}
+    .section-head.center{text-align:center}
+    .section-eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);margin-bottom:14px}
+    h2.display{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.2vw,40px);letter-spacing:-.015em;margin:0 0 14px}
+    .section-head p{color:var(--muted);font-size:16.5px;margin:0}
 
-/* ---------- PLATFORMS ---------- */
-.platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.platform-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 22px}
-.platform-card h4{font-family:var(--display);font-weight:700;font-size:16px;margin:0 0 7px;display:flex;align-items:center;gap:8px}
-.platform-card h4::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent);display:inline-block}
-.platform-card p{color:var(--muted);font-size:13.5px;margin:0;line-height:1.6}
+    /* ---------- PLATFORMS ---------- */
+    .platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .platform-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 22px}
+    .platform-card h4{font-family:var(--display);font-weight:700;font-size:16px;margin:0 0 7px;display:flex;align-items:center;gap:8px}
+    .platform-card h4::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent);display:inline-block}
+    .platform-card p{color:var(--muted);font-size:13.5px;margin:0;line-height:1.6}
 
-/* ---------- FEATURE GRID ---------- */
-.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.feature{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
-.feature-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.feature h3{font-family:var(--display);font-size:17.5px;font-weight:700;margin:0 0 8px}
-.feature p{color:var(--muted);font-size:14.5px;margin:0;line-height:1.6}
-.icon-a{background:rgba(216,67,47,.1)}
-.icon-b{background:rgba(85,70,232,.1)}
-.icon-c{background:rgba(31,138,95,.1)}
-.icon-d{background:rgba(21,21,26,.07)}
+    /* ---------- FEATURE GRID ---------- */
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .feature{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+    .feature-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+    .feature h3{font-family:var(--display);font-size:17.5px;font-weight:700;margin:0 0 8px}
+    .feature p{color:var(--muted);font-size:14.5px;margin:0;line-height:1.6}
+    .icon-a{background:rgba(216,67,47,.1)}
+    .icon-b{background:rgba(85,70,232,.1)}
+    .icon-c{background:rgba(31,138,95,.1)}
+    .icon-d{background:rgba(21,21,26,.07)}
 
-.also-checks{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);text-align:center}
-.also-checks-label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:14px}
-.also-checks-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-.also-checks-list span.item{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 14px}
+    .also-checks{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);text-align:center}
+    .also-checks-label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:14px}
+    .also-checks-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+    .also-checks-list span.item{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 14px}
 
-/* ---------- DEMO TABS ---------- */
-.demo-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px}
-.demo-tab{font-family:var(--body);font-size:14px;font-weight:600;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 18px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
-.demo-tab:hover{color:var(--ink)}
-.demo-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.demo-panel{display:none;max-width:740px;margin:0 auto}
-.demo-panel.active{display:block}
-.demo-list{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.demo-row{display:flex;align-items:center;gap:14px;padding:15px 20px}
-.demo-row + .demo-row{border-top:1px solid var(--line)}
-.demo-row .path{font-family:var(--mono);font-size:13px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.demo-row .meta{color:var(--muted);font-size:12.5px;flex:none;font-family:var(--mono)}
+    /* ---------- DEMO TABS ---------- */
+    .demo-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px}
+    .demo-tab{font-family:var(--body);font-size:14px;font-weight:600;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 18px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+    .demo-tab:hover{color:var(--ink)}
+    .demo-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .demo-panel{display:none;max-width:740px;margin:0 auto}
+    .demo-panel.active{display:block}
+    .demo-list{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .demo-row{display:flex;align-items:center;gap:14px;padding:15px 20px}
+    .demo-row + .demo-row{border-top:1px solid var(--line)}
+    .demo-row .path{font-family:var(--mono);font-size:13px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .demo-row .meta{color:var(--muted);font-size:12.5px;flex:none;font-family:var(--mono)}
 
-/* ---------- AUDIT EXAMPLE (plain-English fix list) ---------- */
-.audit-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px;max-width:720px;margin:0 auto}
-.audit-row{display:flex;gap:14px;padding:18px 18px;border-radius:10px}
-.audit-row + .audit-row{border-top:1px solid var(--line)}
-.audit-badge{font-family:var(--mono);font-size:11px;font-weight:600;flex:none;width:104px;text-align:center;white-space:nowrap;padding:4px 6px;border-radius:6px;height:fit-content;margin-top:2px}
-.audit-badge.high{background:rgba(216,67,47,.1);color:var(--flag)}
-.audit-badge.med{background:rgba(85,70,232,.1);color:var(--accent)}
-.audit-badge.low{background:rgba(31,138,95,.1);color:var(--good)}
-.audit-row p{margin:0;font-size:15px;line-height:1.55}
-.audit-row p b{font-weight:600}
+    /* ---------- AUDIT EXAMPLE (plain-English fix list) ---------- */
+    .audit-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px;max-width:720px;margin:0 auto}
+    .audit-row{display:flex;gap:14px;padding:18px 18px;border-radius:10px}
+    .audit-row + .audit-row{border-top:1px solid var(--line)}
+    .audit-badge{font-family:var(--mono);font-size:11px;font-weight:600;flex:none;width:104px;text-align:center;white-space:nowrap;padding:4px 6px;border-radius:6px;height:fit-content;margin-top:2px}
+    .audit-badge.high{background:rgba(216,67,47,.1);color:var(--flag)}
+    .audit-badge.med{background:rgba(85,70,232,.1);color:var(--accent)}
+    .audit-badge.low{background:rgba(31,138,95,.1);color:var(--good)}
+    .audit-row p{margin:0;font-size:15px;line-height:1.55}
+    .audit-row p b{font-weight:600}
 
-/* ---------- COMPARISON ---------- */
-.compare-card{max-width:820px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.compare-grid{display:grid;grid-template-columns:1fr 1fr}
-.compare-col{padding:30px 30px}
-.compare-col + .compare-col{border-left:1px solid var(--line)}
-.compare-col h4{font-family:var(--display);font-size:15px;font-weight:700;margin:0 0 18px;color:var(--muted)}
-.compare-col.win h4{color:var(--accent)}
-.compare-col ul{list-style:none;margin:0;padding:0}
-.compare-col li{padding:10px 0;font-size:14.5px;color:var(--muted);display:flex;gap:10px}
-.compare-col.win li{color:var(--ink)}
-.compare-col li .mark{flex:none;font-family:var(--mono)}
-.compare-col:not(.win) li .mark{color:var(--line)}
-.compare-col.win li .mark{color:var(--good)}
+    /* ---------- COMPARISON ---------- */
+    .compare-card{max-width:820px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr}
+    .compare-col{padding:30px 30px}
+    .compare-col + .compare-col{border-left:1px solid var(--line)}
+    .compare-col h4{font-family:var(--display);font-size:15px;font-weight:700;margin:0 0 18px;color:var(--muted)}
+    .compare-col.win h4{color:var(--accent)}
+    .compare-col ul{list-style:none;margin:0;padding:0}
+    .compare-col li{padding:10px 0;font-size:14.5px;color:var(--muted);display:flex;gap:10px}
+    .compare-col.win li{color:var(--ink)}
+    .compare-col li .mark{flex:none;font-family:var(--mono)}
+    .compare-col:not(.win) li .mark{color:var(--line)}
+    .compare-col.win li .mark{color:var(--good)}
 
-/* ---------- INSTALL ---------- */
-.install-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
-.steps{list-style:none;margin:0 0 28px;padding:0}
-.steps li{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
-.steps li:first-child{border-top:none}
-.step-num{font-family:var(--display);font-weight:800;font-size:20px;color:var(--accent)}
-.step-body h4{margin:0 0 4px;font-size:15.5px;font-weight:600}
-.step-body p{margin:0;color:var(--muted);font-size:14.5px}
-.specs{font-family:var(--mono);font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;line-height:2}
-.specs b{color:var(--ink)}
+    /* ---------- INSTALL ---------- */
+    .install-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+    .steps{list-style:none;margin:0 0 28px;padding:0}
+    .steps li{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+    .steps li:first-child{border-top:none}
+    .step-num{font-family:var(--display);font-weight:800;font-size:20px;color:var(--accent)}
+    .step-body h4{margin:0 0 4px;font-size:15.5px;font-weight:600}
+    .step-body p{margin:0;color:var(--muted);font-size:14.5px}
+    .specs{font-family:var(--mono);font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;line-height:2}
+    .specs b{color:var(--ink)}
 
-.setupwin{
-  max-width:480px;margin:0 auto;background:#F3F3F3;border-radius:10px;overflow:hidden;
-  box-shadow:0 24px 60px -24px rgba(21,21,26,.4),0 0 0 1px rgba(21,21,26,.08);
-  font-family:'Segoe UI',system-ui,sans-serif;color:#1B1B1B;
-}
-.sw-titlebar{display:flex;align-items:center;gap:8px;height:36px;padding:0 10px 0 12px;background:#E4E4E4;border-bottom:1px solid #CBCBCB;font-size:12.5px;font-weight:600}
-.sw-titlebar .sw-icon{width:15px;height:15px;flex:none;border-radius:4px;background:var(--accent)}
-.sw-titlebar .sw-name{flex:1;line-height:1}
-.sw-titlebar .sw-close{width:26px;height:26px;flex:none;display:flex;align-items:center;justify-content:center;font-size:11px;color:#3A3A3A}
-.sw-body{padding:26px 26px 20px}
-.sw-body h5{margin:0 0 6px;font-size:14.5px;font-weight:600}
-.sw-body p{margin:0 0 20px;font-size:12.5px;color:#4A4A4A}
-.sw-progress{height:14px;background:#D9D9D9;border:1px solid #B7B7B7;border-radius:3px;overflow:hidden;margin-bottom:10px}
-.sw-progress-fill{height:100%;width:64%;background:var(--good)}
-.sw-status{font-size:12px;color:#4A4A4A;margin-bottom:22px;font-family:'Consolas','JetBrains Mono',monospace}
-.sw-actions{display:flex;justify-content:flex-end;gap:8px}
-.sw-btn{font-family:inherit;font-size:12.5px;padding:6px 18px;border-radius:3px;border:1px solid #ADADAD;background:#E9E9E9;color:#8A8A8A}
-.sw-btn.primary{background:#DCDCDC;color:#8A8A8A}
-.dl-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
-.dl-meta{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+    /* Windows Run dialog – from the older design */
+    .rundialog{
+      max-width:540px;margin:0 auto;background:#F0F1F3;border-radius:7px;overflow:hidden;
+      box-shadow:0 24px 60px -20px rgba(0,0,0,.55),0 0 0 1px rgba(0,0,0,.25);
+      font-family:'Segoe UI',system-ui,sans-serif;color:#1B1B1B;
+    }
+    .rd-titlebar{
+      display:flex;align-items:center;gap:8px;height:38px;padding:0 10px 0 12px;
+      background:#DEE1E6;border-bottom:1px solid #C9CCD1;font-size:13px;font-weight:600;
+    }
+    .rd-titlebar .rd-icon{
+      width:16px;height:16px;flex:none;border-radius:3px;
+      background:linear-gradient(135deg,#3B9EFF,#0A64C2);
+    }
+    .rd-titlebar .rd-name{flex:1;line-height:1}
+    .rd-titlebar .rd-close{
+      width:28px;height:28px;flex:none;display:flex;align-items:center;justify-content:center;
+      border-radius:4px;font-size:12px;line-height:1;color:#3A3A3A;
+    }
+    .rd-body{padding:20px 22px 18px}
+    .rd-body p{margin:0 0 16px;font-size:13px;line-height:1.5;color:#2B2B2B}
+    .rd-field-row{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+    .rd-field-label{flex:none;font-size:13px;line-height:1;color:#2B2B2B}
+    .rd-input{
+      flex:1;background:#fff;border:1px solid #8B8D91;border-radius:2px;
+      padding:7px 10px;font-family:'Consolas','IBM Plex Mono',monospace;font-size:12.5px;color:#1B1B1B;
+      overflow-x:auto;white-space:nowrap;
+    }
+    .rd-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+    .rd-btn{
+      font-family:inherit;font-size:12.5px;padding:7px 18px;border-radius:2px;
+      border:1px solid #8B8D91;background:#E7E8EA;color:#1B1B1B;cursor:default;
+    }
+    .rd-btn.primary{background:#0A64C2;border-color:#0A64C2;color:#fff;cursor:pointer}
+    .rd-btn.primary:hover{background:#0850A0}
+    .copy-btn{
+      font-family:'IBM Plex Mono',monospace;font-size:12px;background:#1B1B1B;border:1px solid #1B1B1B;
+      color:#fff;padding:7px 14px;border-radius:2px;cursor:pointer;transition:opacity .15s;
+    }
+    .copy-btn:hover{opacity:.85}
+    .rd-note{color:var(--muted);margin-top:16px;font-size:13px;font-family:var(--mono)}
+    .rd-note .ok{color:var(--good)}
 
-/* ---------- PRICING ---------- */
-.price-card{max-width:460px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(21,21,26,.3)}
-.price-ribbon{background:rgba(85,70,232,.08);border-bottom:1px solid var(--line);padding:12px 28px;font-size:13.5px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:8px}
-.price-body{padding:34px 30px 30px}
-.price-num{font-family:var(--display);font-weight:800;font-size:52px;letter-spacing:-.02em}
-.price-num sup{font-size:20px;top:-24px;position:relative;font-weight:700}
-.price-note{color:var(--muted);font-size:14.5px;margin:4px 0 26px}
-.checklist{list-style:none;margin:0 0 28px;padding:0;font-size:14.5px}
-.checklist li{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:10px}
-.checklist li:first-child{border-top:none}
-.checklist li .mark{color:var(--good);font-family:var(--mono);flex:none}
-.price-actions{display:flex;flex-direction:column;gap:10px}
-.price-fine{font-size:12.5px;color:var(--muted);text-align:center;margin-top:16px}
+    /* ---------- PRICING ---------- */
+    .price-card{max-width:460px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(21,21,26,.3)}
+    .price-ribbon{background:rgba(85,70,232,.08);border-bottom:1px solid var(--line);padding:12px 28px;font-size:13.5px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:8px}
+    .price-body{padding:34px 30px 30px}
+    .price-num{font-family:var(--display);font-weight:800;font-size:52px;letter-spacing:-.02em}
+    .price-num sup{font-size:20px;top:-24px;position:relative;font-weight:700}
+    .price-note{color:var(--muted);font-size:14.5px;margin:4px 0 26px}
+    .checklist{list-style:none;margin:0 0 28px;padding:0;font-size:14.5px}
+    .checklist li{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:10px}
+    .checklist li:first-child{border-top:none}
+    .checklist li .mark{color:var(--good);font-family:var(--mono);flex:none}
+    .price-actions{display:flex;flex-direction:column;gap:10px}
+    .price-fine{font-size:12.5px;color:var(--muted);text-align:center;margin-top:16px}
 
-/* ---------- REVIEWS ---------- */
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.review-card{
-  background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 24px 22px;display:flex;flex-direction:column;
-  opacity:0;transform:translateY(10px);animation:reviewIn .45s ease-out forwards;animation-delay:var(--d,0s);
-  transition:transform .18s,box-shadow .18s;
-}
-.review-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(21,21,26,.22)}
-@keyframes reviewIn{to{opacity:1;transform:translateY(0)}}
-.review-stars{color:#E3A008;font-size:13px;letter-spacing:2px;margin-bottom:14px}
-.review-stars .star-empty{color:var(--line)}
-.review-card p.quote{font-size:14.5px;line-height:1.6;margin:0 0 20px;color:var(--ink);flex:1}
-.review-who{display:flex;align-items:center;gap:10px}
-.review-avatar{width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:12px;flex:none}
-.review-who div{line-height:1.3}
-.review-who b{display:block;font-size:13.5px}
-.review-who span{font-size:12.5px;color:var(--muted)}
-.reviews-more-row{text-align:center;margin-top:28px}
-@media (prefers-reduced-motion: reduce){
-  .review-card{animation:none;opacity:1;transform:none}
-}
+    /* ---------- REVIEWS ---------- */
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .review-card{
+      background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 24px 22px;display:flex;flex-direction:column;
+      opacity:0;transform:translateY(10px);animation:reviewIn .45s ease-out forwards;animation-delay:var(--d,0s);
+      transition:transform .18s,box-shadow .18s;
+    }
+    .review-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(21,21,26,.22)}
+    @keyframes reviewIn{to{opacity:1;transform:translateY(0)}}
+    .review-stars{color:#E3A008;font-size:13px;letter-spacing:2px;margin-bottom:14px}
+    .review-stars .star-empty{color:var(--line)}
+    .review-card p.quote{font-size:14.5px;line-height:1.6;margin:0 0 20px;color:var(--ink);flex:1}
+    .review-who{display:flex;align-items:center;gap:10px}
+    .review-avatar{width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:12px;flex:none}
+    .review-who div{line-height:1.3}
+    .review-who b{display:block;font-size:13.5px}
+    .review-who span{font-size:12.5px;color:var(--muted)}
+    .reviews-more-row{text-align:center;margin-top:28px}
+    @media (prefers-reduced-motion: reduce){
+      .review-card{animation:none;opacity:1;transform:none}
+    }
 
-/* ---------- FAQ ---------- */
-.faq{max-width:760px;margin:0 auto}
-.faq-item{border-top:1px solid var(--line)}
-.faq-item:last-child{border-bottom:1px solid var(--line)}
-.faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;font-family:var(--body);font-size:16px;font-weight:600;color:var(--ink)}
-.faq-q .plus{font-family:var(--mono);font-size:18px;color:var(--muted);flex:none;transition:transform .2s}
-.faq-item.open .faq-q .plus{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
-.faq-a p{margin:0;padding:0 4px 20px;color:var(--muted);font-size:15px;max-width:62ch;line-height:1.6}
-.faq-item.open .faq-a{max-height:200px}
+    /* ---------- FAQ ---------- */
+    .faq{max-width:760px;margin:0 auto}
+    .faq-item{border-top:1px solid var(--line)}
+    .faq-item:last-child{border-bottom:1px solid var(--line)}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;font-family:var(--body);font-size:16px;font-weight:600;color:var(--ink)}
+    .faq-q .plus{font-family:var(--mono);font-size:18px;color:var(--muted);flex:none;transition:transform .2s}
+    .faq-item.open .faq-q .plus{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .faq-a p{margin:0;padding:0 4px 20px;color:var(--muted);font-size:15px;max-width:62ch;line-height:1.6}
+    .faq-item.open .faq-a{max-height:200px}
 
-/* ---------- FOOTER ---------- */
-footer{border-top:1px solid var(--line);padding:56px 0 28px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:44px}
-.foot-brand .logo{margin-bottom:14px}
-.foot-brand p{color:var(--muted);font-size:14px;line-height:1.6;max-width:32ch;margin:0}
-.foot-col h5{font-family:var(--display);font-size:13px;font-weight:700;margin:0 0 16px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-.foot-col ul{list-style:none;margin:0;padding:0}
-.foot-col li{margin-bottom:11px}
-.foot-col a{text-decoration:none;color:var(--ink);font-size:14.5px}
-.foot-col a:hover{color:var(--accent)}
-.foot-bottom{border-top:1px solid var(--line);padding-top:22px}
-.foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13.5px;color:var(--muted)}
-.status-line{display:flex;align-items:center;gap:8px}
-.status-dot{width:6px;height:6px;border-radius:50%;background:var(--good)}
+    /* ---------- FOOTER ---------- */
+    footer{border-top:1px solid var(--line);padding:56px 0 28px}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:44px}
+    .foot-brand .logo{margin-bottom:14px}
+    .foot-brand p{color:var(--muted);font-size:14px;line-height:1.6;max-width:32ch;margin:0}
+    .foot-col h5{font-family:var(--display);font-size:13px;font-weight:700;margin:0 0 16px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+    .foot-col ul{list-style:none;margin:0;padding:0}
+    .foot-col li{margin-bottom:11px}
+    .foot-col a{text-decoration:none;color:var(--ink);font-size:14.5px}
+    .foot-col a:hover{color:var(--accent)}
+    .foot-bottom{border-top:1px solid var(--line);padding-top:22px}
+    .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13.5px;color:var(--muted)}
+    .status-line{display:flex;align-items:center;gap:8px}
+    .status-dot{width:6px;height:6px;border-radius:50%;background:var(--good)}
 
-/* ---------- COOKIE CONSENT ---------- */
-.cookie-banner{
-  position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:900px;margin:0 auto;
-  background:var(--ink);color:var(--bg);border-radius:14px;padding:18px 20px;
-  display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
-  box-shadow:0 20px 50px -20px rgba(0,0,0,.4);
-  transform:translateY(140%);transition:transform .35s ease;
-}
-.cookie-banner.show{transform:translateY(0)}
-.cookie-text{font-size:13.5px;line-height:1.55;margin:0;flex:1;min-width:220px;color:var(--bg)}
-.cookie-text a{color:inherit;text-decoration:underline}
-.cookie-actions{display:flex;gap:10px;flex:none;flex-wrap:wrap}
-.cookie-btn{font-family:var(--body);font-size:13px;font-weight:600;padding:9px 16px;border-radius:8px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
-.cookie-btn.accept{background:var(--accent);color:#fff}
-.cookie-btn.reject{background:transparent;color:var(--bg);border-color:rgba(246,244,238,.35)}
-.cookie-btn.reject:hover{border-color:rgba(246,244,238,.6)}
-@media (prefers-reduced-motion: reduce){.cookie-banner{transition:none}}
-@media (max-width:560px){.cookie-banner{left:10px;right:10px;bottom:10px;justify-content:flex-start}}
+    /* ---------- COOKIE CONSENT ---------- */
+    .cookie-banner{
+      position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:900px;margin:0 auto;
+      background:var(--ink);color:var(--bg);border-radius:14px;padding:18px 20px;
+      display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
+      box-shadow:0 20px 50px -20px rgba(0,0,0,.4);
+      transform:translateY(140%);transition:transform .35s ease;
+    }
+    .cookie-banner.show{transform:translateY(0)}
+    .cookie-text{font-size:13.5px;line-height:1.55;margin:0;flex:1;min-width:220px;color:var(--bg)}
+    .cookie-text a{color:inherit;text-decoration:underline}
+    .cookie-actions{display:flex;gap:10px;flex:none;flex-wrap:wrap}
+    .cookie-btn{font-family:var(--body);font-size:13px;font-weight:600;padding:9px 16px;border-radius:8px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
+    .cookie-btn.accept{background:var(--accent);color:#fff}
+    .cookie-btn.reject{background:transparent;color:var(--bg);border-color:rgba(246,244,238,.35)}
+    .cookie-btn.reject:hover{border-color:rgba(246,244,238,.6)}
+    @media (prefers-reduced-motion: reduce){.cookie-banner{transition:none}}
+    @media (max-width:560px){.cookie-banner{left:10px;right:10px;bottom:10px;justify-content:flex-start}}
 
-@media (max-width:960px){
-  .hero-grid{grid-template-columns:1fr}
-  .features{grid-template-columns:1fr 1fr}
-  .platform-grid{grid-template-columns:1fr 1fr}
-  .reviews-grid{grid-template-columns:1fr 1fr}
-  .install-grid{grid-template-columns:1fr}
-  .compare-grid{grid-template-columns:1fr}
-  .compare-col + .compare-col{border-left:none;border-top:1px solid var(--line)}
-  .nav-links{display:none}
-  .foot-grid{grid-template-columns:1fr 1fr}
-}
-@media (max-width:560px){
-  .features{grid-template-columns:1fr}
-  .platform-grid{grid-template-columns:1fr}
-  .reviews-grid{grid-template-columns:1fr}
-  .stat-item{min-width:50%}
-  .foot-grid{grid-template-columns:1fr}
-}
-</style>
+    @media (max-width:960px){
+      .hero-grid{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr 1fr}
+      .platform-grid{grid-template-columns:1fr 1fr}
+      .reviews-grid{grid-template-columns:1fr 1fr}
+      .install-grid{grid-template-columns:1fr}
+      .compare-grid{grid-template-columns:1fr}
+      .compare-col + .compare-col{border-left:none;border-top:1px solid var(--line)}
+      .nav-links{display:none}
+      .foot-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:560px){
+      .features{grid-template-columns:1fr}
+      .platform-grid{grid-template-columns:1fr}
+      .reviews-grid{grid-template-columns:1fr}
+      .stat-item{min-width:50%}
+      .foot-grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
 
@@ -353,10 +375,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
       <h1 class="display">Your rankings have<br>a <span class="fade">quiet leak.</span></h1>
       <p class="sub">SeoBooster is a desktop tool that connects straight to your site — no plugin, no dashboard login. It crawls every link, tracks every backlink, and runs a deep AI audit of your structure, then hands you a fix list in plain English.</p>
       <div class="cta-row">
-        <a href="#install" class="btn btn-primary">Download for Windows</a>
+        <a href="#install" class="btn btn-primary">Install via Win+R — free trial</a>
         <a href="#modules" class="btn-ghost">See what it checks →</a>
       </div>
-      <div class="trust">Windows 10/11 <span class="sep">·</span> Signed installer <span class="sep">·</span> <b>Free 7-day trial, no card</b></div>
+      <div class="trust">Windows 10/11 <span class="sep">·</span> One command <span class="sep">·</span> <b>Free 7-day trial, no card</b></div>
     </div>
 
     <div class="appwin">
@@ -588,49 +610,74 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
   </div>
 </section>
 
+<!-- ========== ИЗМЕНЁННАЯ СЕКЦИЯ INSTALL ========== -->
 <section id="install" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap install-grid">
     <div>
       <span class="section-eyebrow">Getting started</span>
-      <h2 class="display">Download, install, connect.</h2>
-      <p style="color:var(--muted);font-size:16px;margin:0 0 20px">A normal Windows installer — no commands to copy, nothing to paste into a terminal.</p>
+      <h2 class="display">One command, one minute.</h2>
+      <p style="color:var(--muted);font-size:16px;margin:0 0 20px">No installer to download, no .exe to double‑click. Just copy the command, press <kbd>Win</kbd>+<kbd>R</kbd>, paste and hit Enter.</p>
       <ul class="steps">
-        <li><div class="step-num">01</div><div class="step-body"><h4>Download the installer</h4><p>SeoBooster-Setup.exe, digitally signed, from this page.</p></div></li>
-        <li><div class="step-num">02</div><div class="step-body"><h4>Run SeoBooster-Setup.exe</h4><p>Double-click it and follow the setup wizard.</p></div></li>
-        <li><div class="step-num">03</div><div class="step-body"><h4>Connect your site</h4><p>Paste your site's URL when the app opens.</p></div></li>
-        <li><div class="step-num">04</div><div class="step-body"><h4>Get your first scan</h4><p>Full trial starts automatically — no card required.</p></div></li>
+        <li>
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h4>Press <kbd>Win</kbd> + <kbd>R</kbd></h4>
+            <p>Opens the Windows Run box — no other software required.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h4>Paste the command and hit Enter</h4>
+            <p>SeoBooster downloads and launches automatically.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h4>Connect your site</h4>
+            <p>Paste your site's URL when the app opens.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h4>Get your first scan</h4>
+            <p>Full trial starts automatically — no card required.</p>
+          </div>
+        </li>
       </ul>
       <div class="specs">
-        <div><b>Requires:</b> Windows 10/11, 64-bit</div>
-        <div><b>Download size:</b> 118 MB</div>
-        <div><b>Publisher:</b> SeoBooster Software Ltd. — signed installer, checksum published</div>
+        <div><b>Requires:</b> Windows 10/11, 64‑bit</div>
+        <div><b>Install size:</b> ~118 MB</div>
+        <div><b>Publisher:</b> SeoBooster Software Ltd. — signed binary, checksum published</div>
       </div>
     </div>
-    <div>
-      <div class="setupwin">
-        <div class="sw-titlebar">
-          <span class="sw-icon" aria-hidden="true"></span><span class="sw-name">SeoBooster Setup</span>
-          <span class="sw-close">✕</span>
-        </div>
-        <div class="sw-body">
-          <h5>Installing SeoBooster</h5>
-          <p>Please wait while SeoBooster is installed on this computer.</p>
-          <div class="sw-progress"><div class="sw-progress-fill"></div></div>
-          <div class="sw-status">Copying files… C:\Program Files\SeoBooster\engine.dll</div>
-          <div class="sw-actions">
-            <button class="sw-btn">Back</button>
-            <button class="sw-btn primary">Next</button>
-            <button class="sw-btn">Cancel</button>
-          </div>
-        </div>
+
+    <!-- Windows Run dialog (в точности как в старом варианте) -->
+    <div class="rundialog">
+      <div class="rd-titlebar">
+        <span class="rd-icon" aria-hidden="true"></span>
+        <span class="rd-name">Run</span>
+        <span class="rd-close">✕</span>
       </div>
-      <div class="dl-row">
-        <a href="#" class="btn btn-primary">Download for Windows — 118 MB</a>
-        <span class="dl-meta">v4.2.1 · SHA-256 published on request</span>
+      <div class="rd-body">
+        <p>Type the name of a program, folder, document, or internet resource, and Windows will open it for you.</p>
+        <div class="rd-field-row">
+          <span class="rd-field-label">Open:</span>
+          <div class="rd-input" id="install-cmd">powershell -Command "irm https://get.seobooster.dev/install.ps1 | iex"</div>
+        </div>
+        <div class="rd-actions">
+          <button class="copy-btn" id="copy-btn">Copy command</button>
+          <button class="rd-btn primary">OK</button>
+          <button class="rd-btn">Cancel</button>
+        </div>
+        <p class="rd-note"><br>Downloading SeoBooster... <span class="ok">done</span><br>Launching application…</p>
       </div>
     </div>
   </div>
 </section>
+<!-- ====== КОНЕЦ ИЗМЕНЁННОЙ СЕКЦИИ ====== -->
 
 <section id="pricing">
   <div class="wrap">
@@ -652,7 +699,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
           <li><span class="mark">✓</span> Free updates for 1 year</li>
         </ul>
         <div class="price-actions">
-          <a href="#install" class="btn btn-primary" style="justify-content:center">Download free trial</a>
+          <a href="#install" class="btn btn-primary" style="justify-content:center">Start free trial</a>
           <a href="#" class="btn btn-secondary" style="justify-content:center">Buy license — $199</a>
         </div>
         <p class="price-fine">No charge during the trial. After 7 days, purchase the license to keep using SeoBooster.</p>
@@ -762,270 +809,281 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
 </div>
 
 <script>
-/* ---- cookie consent banner ---- */
-(function(){
-  var KEY = 'seobooster_cookie_consent';
-  var banner = document.getElementById('cookie-banner');
-  if(!banner) return;
-  if(!localStorage.getItem(KEY)){
-    requestAnimationFrame(function(){ banner.classList.add('show'); });
-  }
-  function dismiss(value){
-    localStorage.setItem(KEY, value);
-    banner.classList.remove('show');
-  }
-  document.getElementById('cookie-accept').addEventListener('click', function(){ dismiss('accepted'); });
-  document.getElementById('cookie-reject').addEventListener('click', function(){ dismiss('rejected'); });
-})();
-
-/* ---- live stat strip: counts up on scroll into view, then keeps ticking ---- */
-(function(){
-  function formatNum(n){ return Math.round(n).toLocaleString('en-US'); }
-
-  function animateCount(el, target, duration){
-    var startTime = null;
-    function tick(now){
-      if(startTime === null) startTime = now;
-      var t = Math.min((now - startTime) / duration, 1);
-      var eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = formatNum(target * eased);
-      if(t < 1) requestAnimationFrame(tick);
-      else el.textContent = formatNum(target);
+  /* ---- cookie consent banner ---- */
+  (function(){
+    var KEY = 'seobooster_cookie_consent';
+    var banner = document.getElementById('cookie-banner');
+    if(!banner) return;
+    if(!localStorage.getItem(KEY)){
+      requestAnimationFrame(function(){ banner.classList.add('show'); });
     }
-    requestAnimationFrame(tick);
-  }
+    function dismiss(value){
+      localStorage.setItem(KEY, value);
+      banner.classList.remove('show');
+    }
+    document.getElementById('cookie-accept').addEventListener('click', function(){ dismiss('accepted'); });
+    document.getElementById('cookie-reject').addEventListener('click', function(){ dismiss('rejected'); });
+  })();
 
-  function bump(el){
-    el.classList.remove('bump');
-    void el.offsetWidth;
-    el.classList.add('bump');
-  }
+  /* ---- live stat strip: counts up on scroll into view, then keeps ticking ---- */
+  (function(){
+    function formatNum(n){ return Math.round(n).toLocaleString('en-US'); }
 
-  var timeValues = ['4m 12s','4m 05s','3m 58s','4m 21s','4m 09s','4m 15s'];
+    function animateCount(el, target, duration){
+      var startTime = null;
+      function tick(now){
+        if(startTime === null) startTime = now;
+        var t = Math.min((now - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = formatNum(target * eased);
+        if(t < 1) requestAnimationFrame(tick);
+        else el.textContent = formatNum(target);
+      }
+      requestAnimationFrame(tick);
+    }
 
-  function startLiveStats(){
-    var linksEl = document.getElementById('stat-links');
-    var brokenEl = document.getElementById('stat-broken');
-    var backlinksEl = document.getElementById('stat-backlinks');
-    var timeEl = document.getElementById('stat-time');
-    if(!linksEl) return;
+    function bump(el){
+      el.classList.remove('bump');
+      void el.offsetWidth;
+      el.classList.add('bump');
+    }
 
-    var state = {
-      links: parseFloat(linksEl.dataset.base),
-      broken: parseFloat(brokenEl.dataset.base),
-      backlinks: parseFloat(backlinksEl.dataset.base)
-    };
+    var timeValues = ['4m 12s','4m 05s','3m 58s','4m 21s','4m 09s','4m 15s'];
 
+    function startLiveStats(){
+      var linksEl = document.getElementById('stat-links');
+      var brokenEl = document.getElementById('stat-broken');
+      var backlinksEl = document.getElementById('stat-backlinks');
+      var timeEl = document.getElementById('stat-time');
+      if(!linksEl) return;
+
+      var state = {
+        links: parseFloat(linksEl.dataset.base),
+        broken: parseFloat(brokenEl.dataset.base),
+        backlinks: parseFloat(backlinksEl.dataset.base)
+      };
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if(reduceMotion){
+        linksEl.textContent = formatNum(state.links);
+        brokenEl.textContent = formatNum(state.broken);
+        backlinksEl.textContent = formatNum(state.backlinks);
+        timeEl.textContent = timeValues[0];
+        return;
+      }
+
+      animateCount(linksEl, state.links, 1600);
+      animateCount(brokenEl, state.broken, 1600);
+      animateCount(backlinksEl, state.backlinks, 1600);
+      timeEl.textContent = timeValues[0];
+
+      setInterval(function(){
+        state.links += parseFloat(linksEl.dataset.rate) * (0.6 + Math.random() * 1.2);
+        linksEl.textContent = formatNum(state.links);
+        bump(linksEl);
+      }, 2200);
+
+      setInterval(function(){
+        if(Math.random() < 0.7){
+          state.broken += parseFloat(brokenEl.dataset.rate) * (0.5 + Math.random());
+          brokenEl.textContent = formatNum(state.broken);
+          bump(brokenEl);
+        }
+      }, 3800);
+
+      setInterval(function(){
+        state.backlinks += parseFloat(backlinksEl.dataset.rate) * (0.6 + Math.random() * 1.2);
+        backlinksEl.textContent = formatNum(state.backlinks);
+        bump(backlinksEl);
+      }, 2600);
+
+      setInterval(function(){
+        timeEl.textContent = timeValues[Math.floor(Math.random() * timeValues.length)];
+        bump(timeEl);
+      }, 4500);
+    }
+
+    var stripEl = document.getElementById('stat-strip');
+    if('IntersectionObserver' in window && stripEl){
+      var statObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            startLiveStats();
+            statObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      statObserver.observe(stripEl);
+    } else {
+      startLiveStats();
+    }
+  })();
+
+  /* ---- reviews: random sample from a pool, load-more batches ---- */
+  (function(){
+    var reviews = [
+      { name:"Jordan Marsh", role:"SEO Lead, 40-site agency", rating:5, quote:"I'd been chasing a rankings drop for two months. SeoBooster found a redirect loop from a migration we did last year — fixed it in an afternoon." },
+      { name:"Priya Nandakumar", role:"Owner, Nandakumar Design Co.", rating:5, quote:"I'm not technical. The plain-English fix list is the only SEO report I've ever actually finished reading." },
+      { name:"Marcus Ueda", role:"Freelance SEO Consultant", rating:5, quote:"Runs the same scan on every client site regardless of what it's built on. One license, no per-site nonsense." },
+      { name:"Sofia Reyes", role:"Marketing Manager, Reyes &amp; Bloom", rating:5, quote:"Cancelled our plugin subscription the same week. SeoBooster caught things it never did in two years." },
+      { name:"Tom Whitfield", role:"Web Developer", rating:5, quote:"The backlink tracker flagged three toxic sources before they touched our rankings. Paid for itself in one scan." },
+      { name:"Dana Okafor", role:"E-commerce Manager", rating:5, quote:"Scans our whole catalog in under 5 minutes. Our old tool took almost an hour for the same thing." },
+      { name:"Callum Reid", role:"Owner, Reid &amp; Sons Plumbing", rating:4, quote:"Does exactly what it says. Wish there was a Mac version so I could run it from the shop laptop too." },
+      { name:"Naomi Fisher", role:"Freelance Copywriter &amp; SEO", rating:5, quote:"I recommend this to every client who asks 'why did my traffic drop.' It usually finds the answer in ten minutes." },
+      { name:"Ben Odusanya", role:"IT Manager, regional retailer", rating:4, quote:"Solid tool. The first scan on our 12,000-page catalog took a while, but every scan since has been fast." },
+      { name:"Whitney Cole", role:"Blogger", rating:5, quote:"Found 40 broken links from a theme change I made in 2022. I had no idea they were costing me traffic." },
+      { name:"Arjun Mehta", role:"Founder, D2C skincare brand", rating:5, quote:"Went from guessing why our blog stopped ranking to a specific list of 6 things to fix. Fixed 4, traffic's already back up." },
+      { name:"Grace Thompson", role:"Real Estate Agent", rating:5, quote:"I'm not an SEO person and I don't need to be. It just tells me what's broken on my listings pages." },
+      { name:"Felix Bauer", role:"Backend Developer", rating:4, quote:"Does the job well. The report export is just a text file — a PDF option would be nice for clients." },
+      { name:"Aaliyah Brooks", role:"Nonprofit Communications Director", rating:5, quote:"Our donation page had a broken redirect for months. SeoBooster caught it on the first scan." },
+      { name:"Owen Kavanagh", role:"Restaurant Owner", rating:5, quote:"My web guy quoted me $400/month for 'SEO management.' This cost $199 once and found more than he ever mentioned." },
+      { name:"Simone Delacroix", role:"SEO Freelancer", rating:5, quote:"The backlink intelligence module alone is worth the license. I use it for every new client audit." },
+      { name:"Hassan Idris", role:"Founder, logistics startup", rating:4, quote:"Good tool, does what's promised. Took me a minute to find the crawl map view — could be more prominent." },
+      { name:"Ingrid Solberg", role:"Bookstore Owner", rating:5, quote:"Found a 404 that had been live since our site redesign. Six months of lost traffic on our bestseller page." },
+      { name:"Derek Yamamoto", role:"Growth Marketer", rating:5, quote:"We run it across 15 client sites monthly. Consistent results, easy to hand the fix list straight to devs." },
+      { name:"Chiara Romano", role:"Web Designer", rating:5, quote:"My clients think I'm a genius when I hand them a plain-English report instead of a raw crawler export." },
+      { name:"Patrick O'Malley", role:"Small Business Owner", rating:4, quote:"Works as advertised. Support was a bit slow to respond to one email, but the product itself is solid." },
+      { name:"Layla Haddad", role:"Content Strategist", rating:5, quote:"Caught duplicate title tags across 30 blog posts. Google was confused about which page to rank — now it isn't." },
+      { name:"Connor Blake", role:"Freelance Web Developer", rating:5, quote:"I run this before handing off every client site. Catches things I'd otherwise miss in a manual QA pass." },
+      { name:"Mei Lin", role:"E-commerce Founder", rating:5, quote:"Our avg. position improved within a month of fixing what it flagged. Simple as that." },
+      { name:"Robbie Fenwick", role:"Marketing Coordinator", rating:4, quote:"Does exactly what every module promises. Interface is a little utilitarian, but I'll take function over form here." }
+    ];
+
+    function initials(name){
+      return name.split(/\s+/).filter(Boolean).map(function(w){ return w[0]; }).slice(0,2).join('').toUpperCase();
+    }
+
+    function starsHTML(rating){
+      var out = '';
+      for(var i=0;i<5;i++){ out += i < rating ? '★' : '<span class="star-empty">★</span>'; }
+      return out;
+    }
+
+    function shuffle(arr){
+      var a = arr.slice();
+      for(var i=a.length-1;i>0;i--){
+        var j = Math.floor(Math.random()*(i+1));
+        var t=a[i]; a[i]=a[j]; a[j]=t;
+      }
+      return a;
+    }
+
+    var grid = document.getElementById('reviews-grid');
+    var moreBtn = document.getElementById('reviews-more');
+    if(!grid) return;
+
+    var pool = shuffle(reviews);
+    var shown = 0;
+    var batchSize = 6;
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if(reduceMotion){
-      linksEl.textContent = formatNum(state.links);
-      brokenEl.textContent = formatNum(state.broken);
-      backlinksEl.textContent = formatNum(state.backlinks);
-      timeEl.textContent = timeValues[0];
-      return;
-    }
-
-    animateCount(linksEl, state.links, 1600);
-    animateCount(brokenEl, state.broken, 1600);
-    animateCount(backlinksEl, state.backlinks, 1600);
-    timeEl.textContent = timeValues[0];
-
-    setInterval(function(){
-      state.links += parseFloat(linksEl.dataset.rate) * (0.6 + Math.random() * 1.2);
-      linksEl.textContent = formatNum(state.links);
-      bump(linksEl);
-    }, 2200);
-
-    setInterval(function(){
-      if(Math.random() < 0.7){
-        state.broken += parseFloat(brokenEl.dataset.rate) * (0.5 + Math.random());
-        brokenEl.textContent = formatNum(state.broken);
-        bump(brokenEl);
-      }
-    }, 3800);
-
-    setInterval(function(){
-      state.backlinks += parseFloat(backlinksEl.dataset.rate) * (0.6 + Math.random() * 1.2);
-      backlinksEl.textContent = formatNum(state.backlinks);
-      bump(backlinksEl);
-    }, 2600);
-
-    setInterval(function(){
-      timeEl.textContent = timeValues[Math.floor(Math.random() * timeValues.length)];
-      bump(timeEl);
-    }, 4500);
-  }
-
-  var stripEl = document.getElementById('stat-strip');
-  if('IntersectionObserver' in window && stripEl){
-    var statObserver = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          startLiveStats();
-          statObserver.disconnect();
-        }
+    function renderBatch(){
+      var next = pool.slice(shown, shown + batchSize);
+      next.forEach(function(r, i){
+        var card = document.createElement('div');
+        card.className = 'review-card';
+        if(!reduceMotion) card.style.setProperty('--d', (i * 0.07) + 's');
+        card.innerHTML =
+                '<div class="review-stars" aria-label="' + r.rating + ' out of 5 stars">' + starsHTML(r.rating) + '</div>' +
+                '<p class="quote">"' + r.quote + '"</p>' +
+                '<div class="review-who"><span class="review-avatar">' + initials(r.name) + '</span><div><b>' + r.name + '</b><span>' + r.role + '</span></div></div>';
+        grid.appendChild(card);
       });
-    }, { threshold: 0.3 });
-    statObserver.observe(stripEl);
-  } else {
-    startLiveStats();
-  }
-})();
-
-/* ---- reviews: random sample from a pool, load-more batches ---- */
-(function(){
-  var reviews = [
-    { name:"Jordan Marsh", role:"SEO Lead, 40-site agency", rating:5, quote:"I'd been chasing a rankings drop for two months. SeoBooster found a redirect loop from a migration we did last year — fixed it in an afternoon." },
-    { name:"Priya Nandakumar", role:"Owner, Nandakumar Design Co.", rating:5, quote:"I'm not technical. The plain-English fix list is the only SEO report I've ever actually finished reading." },
-    { name:"Marcus Ueda", role:"Freelance SEO Consultant", rating:5, quote:"Runs the same scan on every client site regardless of what it's built on. One license, no per-site nonsense." },
-    { name:"Sofia Reyes", role:"Marketing Manager, Reyes &amp; Bloom", rating:5, quote:"Cancelled our plugin subscription the same week. SeoBooster caught things it never did in two years." },
-    { name:"Tom Whitfield", role:"Web Developer", rating:5, quote:"The backlink tracker flagged three toxic sources before they touched our rankings. Paid for itself in one scan." },
-    { name:"Dana Okafor", role:"E-commerce Manager", rating:5, quote:"Scans our whole catalog in under 5 minutes. Our old tool took almost an hour for the same thing." },
-    { name:"Callum Reid", role:"Owner, Reid &amp; Sons Plumbing", rating:4, quote:"Does exactly what it says. Wish there was a Mac version so I could run it from the shop laptop too." },
-    { name:"Naomi Fisher", role:"Freelance Copywriter &amp; SEO", rating:5, quote:"I recommend this to every client who asks 'why did my traffic drop.' It usually finds the answer in ten minutes." },
-    { name:"Ben Odusanya", role:"IT Manager, regional retailer", rating:4, quote:"Solid tool. The first scan on our 12,000-page catalog took a while, but every scan since has been fast." },
-    { name:"Whitney Cole", role:"Blogger", rating:5, quote:"Found 40 broken links from a theme change I made in 2022. I had no idea they were costing me traffic." },
-    { name:"Arjun Mehta", role:"Founder, D2C skincare brand", rating:5, quote:"Went from guessing why our blog stopped ranking to a specific list of 6 things to fix. Fixed 4, traffic's already back up." },
-    { name:"Grace Thompson", role:"Real Estate Agent", rating:5, quote:"I'm not an SEO person and I don't need to be. It just tells me what's broken on my listings pages." },
-    { name:"Felix Bauer", role:"Backend Developer", rating:4, quote:"Does the job well. The report export is just a text file — a PDF option would be nice for clients." },
-    { name:"Aaliyah Brooks", role:"Nonprofit Communications Director", rating:5, quote:"Our donation page had a broken redirect for months. SeoBooster caught it on the first scan." },
-    { name:"Owen Kavanagh", role:"Restaurant Owner", rating:5, quote:"My web guy quoted me $400/month for 'SEO management.' This cost $199 once and found more than he ever mentioned." },
-    { name:"Simone Delacroix", role:"SEO Freelancer", rating:5, quote:"The backlink intelligence module alone is worth the license. I use it for every new client audit." },
-    { name:"Hassan Idris", role:"Founder, logistics startup", rating:4, quote:"Good tool, does what's promised. Took me a minute to find the crawl map view — could be more prominent." },
-    { name:"Ingrid Solberg", role:"Bookstore Owner", rating:5, quote:"Found a 404 that had been live since our site redesign. Six months of lost traffic on our bestseller page." },
-    { name:"Derek Yamamoto", role:"Growth Marketer", rating:5, quote:"We run it across 15 client sites monthly. Consistent results, easy to hand the fix list straight to devs." },
-    { name:"Chiara Romano", role:"Web Designer", rating:5, quote:"My clients think I'm a genius when I hand them a plain-English report instead of a raw crawler export." },
-    { name:"Patrick O'Malley", role:"Small Business Owner", rating:4, quote:"Works as advertised. Support was a bit slow to respond to one email, but the product itself is solid." },
-    { name:"Layla Haddad", role:"Content Strategist", rating:5, quote:"Caught duplicate title tags across 30 blog posts. Google was confused about which page to rank — now it isn't." },
-    { name:"Connor Blake", role:"Freelance Web Developer", rating:5, quote:"I run this before handing off every client site. Catches things I'd otherwise miss in a manual QA pass." },
-    { name:"Mei Lin", role:"E-commerce Founder", rating:5, quote:"Our avg. position improved within a month of fixing what it flagged. Simple as that." },
-    { name:"Robbie Fenwick", role:"Marketing Coordinator", rating:4, quote:"Does exactly what every module promises. Interface is a little utilitarian, but I'll take function over form here." }
-  ];
-
-  function initials(name){
-    return name.split(/\s+/).filter(Boolean).map(function(w){ return w[0]; }).slice(0,2).join('').toUpperCase();
-  }
-
-  function starsHTML(rating){
-    var out = '';
-    for(var i=0;i<5;i++){ out += i < rating ? '★' : '<span class="star-empty">★</span>'; }
-    return out;
-  }
-
-  function shuffle(arr){
-    var a = arr.slice();
-    for(var i=a.length-1;i>0;i--){
-      var j = Math.floor(Math.random()*(i+1));
-      var t=a[i]; a[i]=a[j]; a[j]=t;
+      shown += next.length;
+      if(shown >= pool.length){
+        moreBtn.style.display = 'none';
+      } else {
+        moreBtn.textContent = 'Show more reviews (' + (pool.length - shown) + ' more)';
+      }
     }
-    return a;
-  }
 
-  var grid = document.getElementById('reviews-grid');
-  var moreBtn = document.getElementById('reviews-more');
-  if(!grid) return;
+    renderBatch();
+    moreBtn.addEventListener('click', renderBatch);
+  })();
 
-  var pool = shuffle(reviews);
-  var shown = 0;
-  var batchSize = 6;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function renderBatch(){
-    var next = pool.slice(shown, shown + batchSize);
-    next.forEach(function(r, i){
-      var card = document.createElement('div');
-      card.className = 'review-card';
-      if(!reduceMotion) card.style.setProperty('--d', (i * 0.07) + 's');
-      card.innerHTML =
-        '<div class="review-stars" aria-label="' + r.rating + ' out of 5 stars">' + starsHTML(r.rating) + '</div>' +
-        '<p class="quote">"' + r.quote + '"</p>' +
-        '<div class="review-who"><span class="review-avatar">' + initials(r.name) + '</span><div><b>' + r.name + '</b><span>' + r.role + '</span></div></div>';
-      grid.appendChild(card);
-    });
-    shown += next.length;
-    if(shown >= pool.length){
-      moreBtn.style.display = 'none';
-    } else {
-      moreBtn.textContent = 'Show more reviews (' + (pool.length - shown) + ' more)';
-    }
-  }
-
-  renderBatch();
-  moreBtn.addEventListener('click', renderBatch);
-})();
-
-/* ---- hero dashboard: date-range toggle + expandable issues ---- */
-(function(){
-  var ranges = {
-    '7d':  { clicks:'41',  clicksD:'+41 (7d)',    impr:'1,860',  imprD:'+310 (7d)',    pos:'23.5', posD:'▲ 1.2 (worse)',  posGood:false, ctr:'1.32%', ctrD:'+0.08pt (7d)',  ctrGood:true },
-    '30d': { clicks:'265', clicksD:'+265 (30d)',  impr:'13,736', imprD:'+2,140 (30d)', pos:'22.8', posD:'▲ 4.1 (worse)',  posGood:false, ctr:'1.26%', ctrD:'+0.12pt (30d)', ctrGood:true },
-    '90d': { clicks:'940', clicksD:'+940 (90d)',  impr:'48,220', imprD:'+9,480 (90d)', pos:'21.6', posD:'▼ 2.3 (better)', posGood:true,  ctr:'1.19%', ctrD:'-0.05pt (90d)', ctrGood:false }
-  };
-
-  var rangeBox = document.getElementById('dash-range');
-  if(rangeBox){
-    var buttons = rangeBox.querySelectorAll('button');
-    var els = {
-      clicks: document.getElementById('dash-clicks'), clicksD: document.getElementById('dash-clicks-d'),
-      impr: document.getElementById('dash-impr'), imprD: document.getElementById('dash-impr-d'),
-      pos: document.getElementById('dash-pos'), posD: document.getElementById('dash-pos-d'),
-      ctr: document.getElementById('dash-ctr'), ctrD: document.getElementById('dash-ctr-d')
+  /* ---- hero dashboard: date-range toggle + expandable issues ---- */
+  (function(){
+    var ranges = {
+      '7d':  { clicks:'41',  clicksD:'+41 (7d)',    impr:'1,860',  imprD:'+310 (7d)',    pos:'23.5', posD:'▲ 1.2 (worse)',  posGood:false, ctr:'1.32%', ctrD:'+0.08pt (7d)',  ctrGood:true },
+      '30d': { clicks:'265', clicksD:'+265 (30d)',  impr:'13,736', imprD:'+2,140 (30d)', pos:'22.8', posD:'▲ 4.1 (worse)',  posGood:false, ctr:'1.26%', ctrD:'+0.12pt (30d)', ctrGood:true },
+      '90d': { clicks:'940', clicksD:'+940 (90d)',  impr:'48,220', imprD:'+9,480 (90d)', pos:'21.6', posD:'▼ 2.3 (better)', posGood:true,  ctr:'1.19%', ctrD:'-0.05pt (90d)', ctrGood:false }
     };
 
-    buttons.forEach(function(btn){
-      btn.addEventListener('click', function(){
-        buttons.forEach(function(b){ b.classList.remove('active'); });
-        btn.classList.add('active');
-        var r = ranges[btn.dataset.range];
-        els.clicks.textContent = r.clicks;
-        els.clicksD.textContent = r.clicksD;
-        els.impr.textContent = r.impr;
-        els.imprD.textContent = r.imprD;
-        els.pos.textContent = r.pos;
-        els.posD.textContent = r.posD;
-        els.posD.classList.toggle('down', !r.posGood);
-        els.ctr.textContent = r.ctr;
-        els.ctrD.textContent = r.ctrD;
-        els.ctrD.classList.toggle('down', !r.ctrGood);
+    var rangeBox = document.getElementById('dash-range');
+    if(rangeBox){
+      var buttons = rangeBox.querySelectorAll('button');
+      var els = {
+        clicks: document.getElementById('dash-clicks'), clicksD: document.getElementById('dash-clicks-d'),
+        impr: document.getElementById('dash-impr'), imprD: document.getElementById('dash-impr-d'),
+        pos: document.getElementById('dash-pos'), posD: document.getElementById('dash-pos-d'),
+        ctr: document.getElementById('dash-ctr'), ctrD: document.getElementById('dash-ctr-d')
+      };
+
+      buttons.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          buttons.forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          var r = ranges[btn.dataset.range];
+          els.clicks.textContent = r.clicks;
+          els.clicksD.textContent = r.clicksD;
+          els.impr.textContent = r.impr;
+          els.imprD.textContent = r.imprD;
+          els.pos.textContent = r.pos;
+          els.posD.textContent = r.posD;
+          els.posD.classList.toggle('down', !r.posGood);
+          els.ctr.textContent = r.ctr;
+          els.ctrD.textContent = r.ctrD;
+          els.ctrD.classList.toggle('down', !r.ctrGood);
+        });
+      });
+    }
+
+    document.querySelectorAll('.dash-issue').forEach(function(issue){
+      issue.addEventListener('click', function(){
+        issue.classList.toggle('open');
       });
     });
-  }
+  })();
 
-  document.querySelectorAll('.dash-issue').forEach(function(issue){
-    issue.addEventListener('click', function(){
-      issue.classList.toggle('open');
+  /* ---- demo tabs ---- */
+  (function(){
+    var tabs = document.querySelectorAll('.demo-tab');
+    var panels = document.querySelectorAll('.demo-panel');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        tabs.forEach(function(t){ t.classList.remove('active'); });
+        panels.forEach(function(p){ p.classList.remove('active'); });
+        tab.classList.add('active');
+        var target = document.querySelector('.demo-panel[data-panel="' + tab.dataset.tab + '"]');
+        if(target) target.classList.add('active');
+      });
+    });
+  })();
+
+  /* ---- faq accordion ---- */
+  (function(){
+    var items = document.querySelectorAll('.faq-item');
+    items.forEach(function(item){
+      var btn = item.querySelector('.faq-q');
+      btn.addEventListener('click', function(){
+        var wasOpen = item.classList.contains('open');
+        items.forEach(function(i){ i.classList.remove('open'); });
+        if(!wasOpen) item.classList.add('open');
+      });
+    });
+  })();
+
+  /* ---- копирование команды для Win+R ---- */
+  document.getElementById('copy-btn').addEventListener('click', function(){
+    var text = document.getElementById('install-cmd').textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      var btn = document.getElementById('copy-btn');
+      var original = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(function(){ btn.textContent = original; }, 1500);
     });
   });
-})();
-
-/* ---- demo tabs ---- */
-(function(){
-  var tabs = document.querySelectorAll('.demo-tab');
-  var panels = document.querySelectorAll('.demo-panel');
-  tabs.forEach(function(tab){
-    tab.addEventListener('click', function(){
-      tabs.forEach(function(t){ t.classList.remove('active'); });
-      panels.forEach(function(p){ p.classList.remove('active'); });
-      tab.classList.add('active');
-      var target = document.querySelector('.demo-panel[data-panel="' + tab.dataset.tab + '"]');
-      if(target) target.classList.add('active');
-    });
-  });
-})();
-
-/* ---- faq accordion ---- */
-(function(){
-  var items = document.querySelectorAll('.faq-item');
-  items.forEach(function(item){
-    var btn = item.querySelector('.faq-q');
-    btn.addEventListener('click', function(){
-      var wasOpen = item.classList.contains('open');
-      items.forEach(function(i){ i.classList.remove('open'); });
-      if(!wasOpen) item.classList.add('open');
-    });
-  });
-})();
 </script>
 
 </body>

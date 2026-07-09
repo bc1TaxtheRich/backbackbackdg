@@ -289,6 +289,25 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
 .status-line{display:flex;align-items:center;gap:8px}
 .status-dot{width:6px;height:6px;border-radius:50%;background:var(--good)}
 
+/* ---------- COOKIE CONSENT ---------- */
+.cookie-banner{
+  position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:900px;margin:0 auto;
+  background:var(--ink);color:var(--bg);border-radius:14px;padding:18px 20px;
+  display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
+  box-shadow:0 20px 50px -20px rgba(0,0,0,.4);
+  transform:translateY(140%);transition:transform .35s ease;
+}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-text{font-size:13.5px;line-height:1.55;margin:0;flex:1;min-width:220px;color:var(--bg)}
+.cookie-text a{color:inherit;text-decoration:underline}
+.cookie-actions{display:flex;gap:10px;flex:none;flex-wrap:wrap}
+.cookie-btn{font-family:var(--body);font-size:13px;font-weight:600;padding:9px 16px;border-radius:8px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
+.cookie-btn.accept{background:var(--accent);color:#fff}
+.cookie-btn.reject{background:transparent;color:var(--bg);border-color:rgba(246,244,238,.35)}
+.cookie-btn.reject:hover{border-color:rgba(246,244,238,.6)}
+@media (prefers-reduced-motion: reduce){.cookie-banner{transition:none}}
+@media (max-width:560px){.cookie-banner{left:10px;right:10px;bottom:10px;justify-content:flex-start}}
+
 @media (max-width:960px){
   .hero-grid{grid-template-columns:1fr}
   .features{grid-template-columns:1fr 1fr}
@@ -425,7 +444,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
 <section id="modules">
   <div class="wrap">
     <div class="section-head center">
-      <span class="section-eyebrow">Seven tools, one license</span>
+      <span class="section-eyebrow">Eight tools, one license</span>
       <h2 class="display">Everything your rankings need — in one pass.</h2>
       <p>Every module runs from the same scan and the same license — audits, backlinks, content, and fixes, without switching tools.</p>
     </div>
@@ -464,6 +483,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
         <div class="feature-icon icon-a"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M4 16l1-4 9-9 3 3-9 9-4 1z" stroke="#D8432F" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg></div>
         <h3>AI Content Writer</h3>
         <p>Drafts SEO-ready blog posts and page copy targeting the exact keywords your audit says you're missing.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon icon-d"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M3 14l4-5 3 3 6-7" stroke="#15151A" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5h4v4" stroke="#15151A" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>SERP Rank Tracker</h3>
+        <p>Tracks your rankings for the keywords that matter, day by day, so you see the impact of every fix before your next report.</p>
       </div>
     </div>
     <div class="also-checks">
@@ -699,6 +723,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
           <li><a href="#modules">Automated Backlink Building</a></li>
           <li><a href="#modules">AI Website Optimizer</a></li>
           <li><a href="#modules">AI Content Writer</a></li>
+          <li><a href="#modules">SERP Rank Tracker</a></li>
           <li><a href="#pricing">Pricing</a></li>
         </ul>
       </div>
@@ -728,7 +753,31 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
   </div>
 </footer>
 
+<div class="cookie-banner" id="cookie-banner">
+  <p class="cookie-text">We use cookies to keep you signed in and understand how this site is used. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn reject" id="cookie-reject">Reject non-essential</button>
+    <button class="cookie-btn accept" id="cookie-accept">Accept all</button>
+  </div>
+</div>
+
 <script>
+/* ---- cookie consent banner ---- */
+(function(){
+  var KEY = 'seobooster_cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  if(!banner) return;
+  if(!localStorage.getItem(KEY)){
+    requestAnimationFrame(function(){ banner.classList.add('show'); });
+  }
+  function dismiss(value){
+    localStorage.setItem(KEY, value);
+    banner.classList.remove('show');
+  }
+  document.getElementById('cookie-accept').addEventListener('click', function(){ dismiss('accepted'); });
+  document.getElementById('cookie-reject').addEventListener('click', function(){ dismiss('rejected'); });
+})();
+
 /* ---- live stat strip: counts up on scroll into view, then keeps ticking ---- */
 (function(){
   function formatNum(n){ return Math.round(n).toLocaleString('en-US'); }

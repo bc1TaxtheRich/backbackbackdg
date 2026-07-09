@@ -98,6 +98,25 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
 .status-line{display:flex;align-items:center;gap:8px}
 .status-dot{width:6px;height:6px;border-radius:50%;background:var(--good)}
 
+/* ---------- COOKIE CONSENT ---------- */
+.cookie-banner{
+  position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:900px;margin:0 auto;
+  background:var(--ink);color:var(--bg);border-radius:14px;padding:18px 20px;
+  display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
+  box-shadow:0 20px 50px -20px rgba(0,0,0,.4);
+  transform:translateY(140%);transition:transform .35s ease;
+}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-text{font-size:13.5px;line-height:1.55;margin:0;flex:1;min-width:220px;color:var(--bg)}
+.cookie-text a{color:inherit;text-decoration:underline}
+.cookie-actions{display:flex;gap:10px;flex:none;flex-wrap:wrap}
+.cookie-btn{font-family:var(--body);font-size:13px;font-weight:600;padding:9px 16px;border-radius:8px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
+.cookie-btn.accept{background:var(--accent);color:#fff}
+.cookie-btn.reject{background:transparent;color:var(--bg);border-color:rgba(246,244,238,.35)}
+.cookie-btn.reject:hover{border-color:rgba(246,244,238,.6)}
+@media (prefers-reduced-motion: reduce){.cookie-banner{transition:none}}
+@media (max-width:560px){.cookie-banner{left:10px;right:10px;bottom:10px;justify-content:flex-start}}
+
 @media (max-width:960px){
   .nav-links{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -231,7 +250,30 @@ footer{border-top:1px solid var(--line);padding:56px 0 28px}
   </div>
 </footer>
 
+<div class="cookie-banner" id="cookie-banner">
+  <p class="cookie-text">We use cookies to keep you signed in and understand how this site is used. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn reject" id="cookie-reject">Reject non-essential</button>
+    <button class="cookie-btn accept" id="cookie-accept">Accept all</button>
+  </div>
+</div>
+
 <script>
+(function(){
+  var KEY = 'seobooster_cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  if(!banner) return;
+  if(!localStorage.getItem(KEY)){
+    requestAnimationFrame(function(){ banner.classList.add('show'); });
+  }
+  function dismiss(value){
+    localStorage.setItem(KEY, value);
+    banner.classList.remove('show');
+  }
+  document.getElementById('cookie-accept').addEventListener('click', function(){ dismiss('accepted'); });
+  document.getElementById('cookie-reject').addEventListener('click', function(){ dismiss('rejected'); });
+})();
+
 document.getElementById('contact-form').addEventListener('submit', function(e){
   e.preventDefault();
   document.getElementById('form-success').classList.add('show');

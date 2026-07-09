@@ -147,6 +147,19 @@
     .feature-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
     .feature h3{font-family:var(--display);font-size:17.5px;font-weight:700;margin:0 0 8px}
     .feature p{color:var(--muted);font-size:14.5px;margin:0;line-height:1.6}
+
+    /* ---------- CARD FLY-IN ---------- */
+    .feature,.platform-card{
+      opacity:0;transform:translateY(28px);
+      transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1);
+    }
+    .feature.in-view,.platform-card.in-view{opacity:1;transform:translateY(0)}
+    .features .feature:nth-child(4n+2),.platform-grid .platform-card:nth-child(3n+2){transition-delay:.08s}
+    .features .feature:nth-child(4n+3),.platform-grid .platform-card:nth-child(3n+3){transition-delay:.16s}
+    .features .feature:nth-child(4n){transition-delay:.24s}
+    @media (prefers-reduced-motion: reduce){
+      .feature,.platform-card{opacity:1;transform:none;transition:none}
+    }
     .icon-a{background:rgba(216,67,47,.1)}
     .icon-b{background:rgba(85,70,232,.1)}
     .icon-c{background:rgba(31,138,95,.1)}
@@ -194,6 +207,21 @@
     .compare-col li .mark{flex:none;font-family:var(--mono)}
     .compare-col:not(.win) li .mark{color:var(--line)}
     .compare-col.win li .mark{color:var(--good)}
+
+    /* ---------- COMPARE FLY-IN ---------- */
+    .compare-col{opacity:0;transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+    .compare-col:not(.win){transform:translateX(-36px)}
+    .compare-col.win{transform:translateX(36px)}
+    .compare-col.in-view{opacity:1;transform:translateX(0)}
+    .compare-col li{opacity:0;transform:translateY(10px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+    .compare-col.in-view li{opacity:1;transform:translateY(0)}
+    .compare-col li:nth-child(1){--d:.05s}
+    .compare-col li:nth-child(2){--d:.15s}
+    .compare-col li:nth-child(3){--d:.25s}
+    .compare-col li:nth-child(4){--d:.35s}
+    @media (prefers-reduced-motion: reduce){
+      .compare-col,.compare-col li{opacity:1;transform:none;transition:none}
+    }
 
     /* ---------- INSTALL ---------- */
     .install-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
@@ -258,6 +286,23 @@
     .price-note{color:var(--muted);font-size:14.5px;margin:4px 0 26px}
     .checklist{list-style:none;margin:0 0 28px;padding:0;font-size:14.5px}
     .checklist li{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:10px}
+
+    /* ---------- PRICING FLY-IN ---------- */
+    .price-card{
+      opacity:0;transform:translateY(32px) scale(.97);
+      transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);
+    }
+    .price-card.in-view{opacity:1;transform:translateY(0) scale(1)}
+    .checklist li{opacity:0;transform:translateY(8px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+    .price-card.in-view .checklist li{opacity:1;transform:translateY(0)}
+    .checklist li:nth-child(1){--d:.15s}
+    .checklist li:nth-child(2){--d:.22s}
+    .checklist li:nth-child(3){--d:.29s}
+    .checklist li:nth-child(4){--d:.36s}
+    .checklist li:nth-child(5){--d:.43s}
+    @media (prefers-reduced-motion: reduce){
+      .price-card,.checklist li{opacity:1;transform:none;transition:none}
+    }
     .checklist li:first-child{border-top:none}
     .checklist li .mark{color:var(--good);font-family:var(--mono);flex:none}
     .price-actions{display:flex;flex-direction:column;gap:10px}
@@ -267,7 +312,7 @@
     .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .review-card{
       background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 24px 22px;display:flex;flex-direction:column;
-      opacity:0;transform:translateY(10px);animation:reviewIn .45s ease-out forwards;animation-delay:var(--d,0s);
+      opacity:0;transform:translateY(20px);animation:reviewIn .6s cubic-bezier(.16,1,.3,1) forwards;animation-delay:var(--d,0s);
       transition:transform .18s,box-shadow .18s;
     }
     .review-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(21,21,26,.22)}
@@ -281,8 +326,14 @@
     .review-who b{display:block;font-size:13.5px}
     .review-who span{font-size:12.5px;color:var(--muted)}
     .reviews-more-row{text-align:center;margin-top:28px}
+    .fly-in{
+      opacity:0;transform:translateX(-48px);
+      transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+    }
+    .fly-in.in-view{opacity:1;transform:translate(0,0)}
     @media (prefers-reduced-motion: reduce){
       .review-card{animation:none;opacity:1;transform:none}
+      .fly-in{opacity:1;transform:none;transition:none}
     }
 
     /* ---------- FAQ ---------- */
@@ -449,7 +500,7 @@
   <div class="wrap">
     <div class="section-head center">
       <span class="section-eyebrow">Works with what you already have</span>
-      <h2 class="display">SeoBooster crawls from the outside — so it doesn't care what your site runs on.</h2>
+      <h2 class="display fly-in">SeoBooster crawls from the outside — so it doesn't care what your site runs on.</h2>
       <p>No plugin to install, no admin login to hand over. Point it at a URL and it reads your site the way a search engine does.</p>
     </div>
     <div class="platform-grid">
@@ -467,7 +518,7 @@
   <div class="wrap">
     <div class="section-head center">
       <span class="section-eyebrow">Eight tools, one license</span>
-      <h2 class="display">Everything your rankings need — in one pass.</h2>
+      <h2 class="display fly-in" id="modules-title">Everything your rankings need — in one pass.</h2>
       <p>Every module runs from the same scan and the same license — audits, backlinks, content, and fixes, without switching tools.</p>
     </div>
     <div class="features">
@@ -532,7 +583,7 @@
   <div class="wrap">
     <div class="section-head center">
       <span class="section-eyebrow">See it in action</span>
-      <h2 class="display">One scan, four views.</h2>
+      <h2 class="display fly-in">One scan, four views.</h2>
       <p>Real excerpts from a scan — switch tabs to see what each module actually reports.</p>
     </div>
     <div class="demo-tabs">
@@ -582,7 +633,7 @@
   <div class="wrap">
     <div class="section-head center">
       <span class="section-eyebrow">vs. a plugin</span>
-      <h2 class="display">Not another plugin.</h2>
+      <h2 class="display fly-in">Not another plugin.</h2>
       <p>Plugins see your site through your CMS. SeoBooster sees it the way a crawler actually does.</p>
     </div>
     <div class="compare-card">
@@ -615,7 +666,7 @@
   <div class="wrap install-grid">
     <div>
       <span class="section-eyebrow">Getting started</span>
-      <h2 class="display">One command, one minute.</h2>
+      <h2 class="display fly-in">One command, one minute.</h2>
       <p style="color:var(--muted);font-size:16px;margin:0 0 20px">No installer to download, no .exe to double‑click. Just copy the command, press <kbd>Win</kbd>+<kbd>R</kbd>, paste and hit Enter.</p>
       <ul class="steps">
         <li>
@@ -683,7 +734,7 @@
   <div class="wrap">
     <div class="section-head center">
       <span class="section-eyebrow">License</span>
-      <h2 class="display">One license. Every module.</h2>
+      <h2 class="display fly-in">One license. Every module.</h2>
       <p>Try everything free for a week. Keep it for good whenever you're ready.</p>
     </div>
     <div class="price-card">
@@ -712,7 +763,7 @@
   <div class="wrap">
     <div class="section-head center">
       <span class="section-eyebrow">Reviews</span>
-      <h2 class="display">What people find when they run it.</h2>
+      <h2 class="display fly-in">What people find when they run it.</h2>
       <p>A random sample each time you load this page — refresh to see a different set.</p>
     </div>
     <div class="reviews-grid" id="reviews-grid"></div>
@@ -726,7 +777,7 @@
   <div class="wrap">
     <div class="section-head center">
       <span class="section-eyebrow">FAQ</span>
-      <h2 class="display">Before you download.</h2>
+      <h2 class="display fly-in">Before you download.</h2>
     </div>
     <div class="faq">
       <div class="faq-item">
@@ -904,6 +955,28 @@
       }, 4500);
     }
 
+    function observeFlyIn(selector, threshold){
+      var els = document.querySelectorAll(selector);
+      if(!('IntersectionObserver' in window)){
+        els.forEach(function(el){ el.classList.add('in-view'); });
+        return;
+      }
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: threshold || 0.2 });
+      els.forEach(function(el){ obs.observe(el); });
+    }
+    observeFlyIn('.fly-in', 0.4);
+    observeFlyIn('.feature');
+    observeFlyIn('.platform-card');
+    observeFlyIn('.compare-col', 0.3);
+    observeFlyIn('.price-card', 0.3);
+
     var stripEl = document.getElementById('stat-strip');
     if('IntersectionObserver' in window && stripEl){
       var statObserver = new IntersectionObserver(function(entries){
@@ -998,7 +1071,19 @@
       }
     }
 
-    renderBatch();
+    if('IntersectionObserver' in window){
+      var reviewsObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            renderBatch();
+            reviewsObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.15 });
+      reviewsObserver.observe(grid);
+    } else {
+      renderBatch();
+    }
     moreBtn.addEventListener('click', renderBatch);
   })();
 
